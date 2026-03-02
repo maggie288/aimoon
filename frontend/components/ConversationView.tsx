@@ -228,12 +228,12 @@ export function ConversationView({
         {/* 吸顶：单集信息 + 展开/收起 + 嘉宾 strip + 播放/下一章 + 进度条 */}
         <div className="sticky top-0 z-10 flex-shrink-0 border-b border-border/50 bg-void backdrop-blur-md">
           {showEpisodeBar && (
-            <div className="px-4 py-2 border-b border-border/50 bg-surface/30 flex items-center gap-3">
-              <div className="max-w-2xl mx-auto flex items-center gap-3 min-w-0 flex-1">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-podcast/15 text-podcast text-xs font-medium">
+            <div className="px-3 sm:px-4 py-2 border-b border-border/50 bg-surface/30 flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="max-w-2xl mx-auto flex flex-wrap items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                <span className="flex h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0 items-center justify-center rounded-full bg-podcast/15 text-podcast text-[10px] sm:text-xs font-medium">
                   {day}
                 </span>
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1 basis-0">
                   <p className="text-[10px] text-muted">{date} · {phase}</p>
                   <p className="text-xs font-medium text-white truncate">{topicTitle}</p>
                 </div>
@@ -251,7 +251,7 @@ export function ConversationView({
               <button
                 type="button"
                 onClick={() => setStickyExpanded((e) => !e)}
-                className="flex-shrink-0 rounded-lg border border-border bg-surface/80 px-2.5 py-1.5 text-[10px] text-muted hover:text-white hover:bg-surface transition-colors flex items-center gap-1"
+                className="flex-shrink-0 rounded-lg border border-border bg-surface/80 px-2 sm:px-2.5 py-1.5 min-h-[44px] sm:min-h-0 text-[10px] text-muted hover:text-white hover:bg-surface transition-colors flex items-center gap-1 touch-manipulation"
                 aria-expanded={stickyExpanded}
                 title={stickyExpanded ? (lang === "en" ? "Collapse" : "收起") : (lang === "en" ? "Expand" : "展开")}
               >
@@ -262,7 +262,7 @@ export function ConversationView({
           )}
           {stickyExpanded && (
           <>
-          <div className="flex items-center justify-center gap-2 py-2 px-4 overflow-x-auto">
+          <div className="flex items-center justify-center gap-2 py-2 px-3 sm:px-4 overflow-x-auto overflow-y-hidden [-webkit-overflow-scrolling:touch]">
             {agents.map((a) => (
               <button
                 key={a.id}
@@ -281,16 +281,16 @@ export function ConversationView({
               </button>
             ))}
           </div>
-          <p className="px-4 pb-2 text-center text-muted text-xs max-w-2xl mx-auto">
+          <p className="px-3 sm:px-4 pb-2 text-center text-muted text-xs max-w-2xl mx-auto line-clamp-2 sm:line-clamp-none">
             {topicDescription}
           </p>
           {/* 一排：左侧返回上一章 + 播放，右侧进入下一章 */}
-          <div className="px-4 pb-2 flex items-center justify-between gap-4 max-w-2xl mx-auto flex-wrap">
-            <div className="flex items-center gap-3">
+          <div className="px-3 sm:px-4 pb-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 max-w-2xl mx-auto">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 min-h-[44px] sm:min-h-0">
               {prevChapterHref != null && (
                 <Link
                   href={prevChapterHref}
-                  className="inline-flex items-center gap-2 rounded-lg bg-surface border border-border text-zinc-300 px-4 py-2 text-sm font-medium hover:bg-surface/80 transition-colors flex-shrink-0"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-surface border border-border text-zinc-300 px-3 py-2.5 sm:px-4 text-sm font-medium hover:bg-surface/80 transition-colors flex-shrink-0 min-h-[44px] sm:min-h-0 touch-manipulation"
                 >
                   {prevChapterLabel ?? (lang === "en" ? "← Previous episode" : "← 返回上一章")}
                 </Link>
@@ -299,7 +299,7 @@ export function ConversationView({
                 <button
                   type="button"
                   onClick={startPlay}
-                  className="inline-flex items-center gap-2 rounded-lg bg-podcast/20 text-podcast px-4 py-2 text-sm font-medium hover:bg-podcast/30 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-podcast/20 text-podcast px-3 py-2.5 sm:px-4 py-2 text-sm font-medium hover:bg-podcast/30 transition-colors min-h-[44px] sm:min-h-0 touch-manipulation"
                 >
                   <span className="text-lg" aria-hidden>▶</span>
                   {t.play}
@@ -308,14 +308,14 @@ export function ConversationView({
                 <button
                   type="button"
                   onClick={stopPlay}
-                  className="inline-flex items-center gap-2 rounded-lg bg-surface border border-border text-zinc-300 px-4 py-2 text-sm font-medium hover:bg-surface/80 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-surface border border-border text-zinc-300 px-3 py-2.5 sm:px-4 py-2 text-sm font-medium hover:bg-surface/80 transition-colors min-h-[44px] sm:min-h-0 touch-manipulation"
                 >
                   <span className="text-lg" aria-hidden>⏸</span>
                   {t.pause}
                 </button>
               )}
               {isPlaying && (
-                <span className="text-muted text-xs">
+                <span className="text-muted text-xs tabular-nums">
                   {t.playing} {currentPlayIndex + 1} / {messages.length}
                 </span>
               )}
@@ -323,7 +323,7 @@ export function ConversationView({
             {nextChapterHref != null && (
               <Link
                 href={nextChapterHref}
-                className="inline-flex items-center gap-2 rounded-lg bg-podcast/20 text-podcast px-4 py-2 text-sm font-medium hover:bg-podcast/30 transition-colors flex-shrink-0"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-podcast/20 text-podcast px-3 py-2.5 sm:px-4 py-2 text-sm font-medium hover:bg-podcast/30 transition-colors flex-shrink-0 min-h-[44px] sm:min-h-0 touch-manipulation"
               >
                 {nextChapterLabel ?? (lang === "en" ? "Next episode →" : "进入下一章 →")}
               </Link>
@@ -331,7 +331,7 @@ export function ConversationView({
           </div>
           {/* 可点击进度条：与当前条同步 */}
           {messages.length > 0 && (
-            <div className="px-4 pb-3">
+            <div className="px-3 sm:px-4 pb-3">
               <div
                 ref={progressRef}
                 role="slider"
@@ -341,7 +341,7 @@ export function ConversationView({
                 aria-valuemax={messages.length}
                 tabIndex={0}
                 onClick={onProgressClick}
-                className="h-2 w-full max-w-2xl mx-auto rounded-full bg-surface border border-border cursor-pointer overflow-hidden flex items-center"
+                className="h-2.5 sm:h-2 w-full max-w-2xl mx-auto rounded-full bg-surface border border-border cursor-pointer overflow-hidden flex items-center touch-manipulation"
               >
                 <div
                   className="h-full bg-podcast/60 rounded-l-full transition-[width] duration-150"
@@ -350,7 +350,7 @@ export function ConversationView({
               </div>
             </div>
           )}
-          <p className="px-4 pb-2 text-center">
+          <p className="px-3 sm:px-4 pb-2 text-center">
             <Link
               href={lang === "zh" ? "/support?lang=zh" : "/support"}
               className="text-muted text-xs hover:text-podcast transition-colors"
@@ -364,7 +364,7 @@ export function ConversationView({
 
         {/* 对话流：可滚动，点击某条跳转播放/暂停；滚动与进度条同步 */}
         <div className="flex-1 min-h-0">
-          <div className="max-w-2xl mx-auto px-4 py-8 space-y-8">
+          <div className="max-w-2xl mx-auto px-3 sm:px-4 py-6 sm:py-8 space-y-6 sm:space-y-8 pb-[env(safe-area-inset-bottom,0)]">
           {messages.map((msg, idx) => {
             if (activeRole !== null && msg.role_id !== activeRole) return null;
             const agent = agentMap[msg.role_id];
@@ -378,7 +378,7 @@ export function ConversationView({
                 tabIndex={0}
                 onClick={() => toggleAt(idx)}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleAt(idx); } }}
-                className={`group flex gap-4 transition-colors cursor-pointer rounded-xl ${isCurrent ? "ring-2 ring-podcast/50 ring-offset-2 ring-offset-void bg-surface/60" : "hover:bg-surface/40"}`}
+                className={`group flex gap-3 sm:gap-4 transition-colors cursor-pointer rounded-lg sm:rounded-xl p-2 sm:p-0 -mx-2 sm:mx-0 touch-manipulation ${isCurrent ? "ring-2 ring-podcast/50 ring-offset-2 ring-offset-void bg-surface/60" : "hover:bg-surface/40 active:bg-surface/50"}`}
               >
                 <div className="flex-shrink-0 pt-0.5">
                   <AgentAvatar
@@ -389,14 +389,14 @@ export function ConversationView({
                     compact
                   />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 overflow-hidden">
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <span className="font-medium text-white">{agent.name}</span>
-                    <span className="text-muted text-xs">{agent.code_name}</span>
-                    <span className="text-podcast-muted text-xs font-mono tabular-nums">{msg.timestamp}</span>
+                    <span className="font-medium text-white text-sm sm:text-base">{agent.name}</span>
+                    <span className="text-muted text-[10px] sm:text-xs">{agent.code_name}</span>
+                    <span className="text-podcast-muted text-[10px] sm:text-xs font-mono tabular-nums">{msg.timestamp}</span>
                     {isCurrent && <span className="text-podcast text-xs">{t.playing}</span>}
                   </div>
-                  <div className="mt-2 space-y-2 text-zinc-300 leading-relaxed">
+                  <div className="mt-1.5 sm:mt-2 space-y-2 text-zinc-300 leading-relaxed text-sm sm:text-base">
                     {msg.content_blocks.map((block, bi) => (
                       <MessageBlock key={bi} block={block} />
                     ))}

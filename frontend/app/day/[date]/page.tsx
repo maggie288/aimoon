@@ -113,25 +113,25 @@ export default function DayPage() {
   return (
     <div className="h-screen min-h-0 bg-void flex flex-col overflow-hidden">
       <header className="flex-shrink-0 border-b border-border/50 bg-void/95 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link href={lang === "zh" ? "/story/camp-zero?lang=zh" : "/story/camp-zero"} className="text-muted text-sm hover:text-white transition-colors">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between flex-wrap gap-x-3 gap-y-1">
+          <div className="flex items-center gap-2 flex-wrap">
+            <Link href={lang === "zh" ? "/story/camp-zero?lang=zh" : "/story/camp-zero"} className="text-muted text-sm hover:text-white transition-colors whitespace-nowrap">
               ← {lang === "zh" ? "零号基地" : "Camp Zero"}
             </Link>
             <Link
               href={lang === "zh" ? "/support?lang=zh" : "/support"}
-              className="text-xs text-muted hover:text-podcast"
+              className="text-xs text-muted hover:text-podcast whitespace-nowrap"
             >
               {lang === "zh" ? "支持我们" : "Support"}
             </Link>
             <Link
               href={lang === "zh" ? `/day/${date}` : `/day/${date}?lang=zh`}
-              className="text-xs text-muted hover:text-podcast"
+              className="text-xs text-muted hover:text-podcast whitespace-nowrap"
             >
               {lang === "zh" ? "EN" : "中文"}
             </Link>
           </div>
-          <span className="text-muted text-xs">Episode {conversation.day}</span>
+          <span className="text-muted text-[10px] sm:text-xs tabular-nums">Episode {conversation.day}</span>
         </div>
       </header>
 
