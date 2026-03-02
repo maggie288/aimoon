@@ -75,7 +75,7 @@ export function MessageBlock({ block }: { block: Block }) {
   if (block.type === "image") {
     const mediaId = block.media_id || "img";
     const label = block.description || mediaId;
-    const src = `/api/media/image/${mediaId}?label=${encodeURIComponent(label.slice(0, 100))}`;
+    const src = `/images-api/${mediaId}`;
     return (
       <figure className="my-3 rounded-lg border border-border bg-surface overflow-hidden">
         <img
@@ -92,7 +92,7 @@ export function MessageBlock({ block }: { block: Block }) {
   if (block.type === "video") {
     const mediaId = block.media_id || "vid";
     const label = block.description || mediaId;
-    const src = `/api/media/image/${mediaId}?label=${encodeURIComponent(label.slice(0, 100))}`;
+    const src = `/images-api/${mediaId}`;
     return (
       <figure className="my-3 rounded-lg border border-border bg-surface overflow-hidden">
         <img

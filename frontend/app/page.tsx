@@ -78,7 +78,7 @@ function HomeContent() {
           >
             <div className="aspect-[16/10] relative bg-zinc-900">
               <img
-                src="/api/media/image/cover-camp-zero"
+                src="/images-api/cover-camp-zero"
                 alt={t.campZero}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#0f0f11"/>
+  <rect x="1" y="1" width="638" height="358" fill="none" stroke="#2d2d32" stroke-width="1" rx="8"/>
+  <text x="320" y="150" fill="#71717a" font-size="14" font-family="system-ui,sans-serif">零号营地</text>
+  <text x="320" y="178" fill="#52525b" font-size="12" font-family="system-ui,sans-serif">
+    <tspan x="320" dy="0" text-anchor="middle">6小时轮值示意：时间轴0–6h分3–4段，</tspan>
+    <tspan x="320" dy="22" text-anchor="middle">每段标主控/备份/休息，阶段完成确认节点。</tspan>
+  </text>
+</svg>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="bg19" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f11"/>
+      <stop offset="100%" style="stop-color:#18181b"/>
+    </linearGradient>
+    <linearGradient id="sunSide" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:0.4"/>
+    </linearGradient>
+    <linearGradient id="spaceSide" x1="100%" y1="50%" x2="0%" y2="50%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:0.6"/>
+    </linearGradient>
+    <marker id="arrowHeatIn" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 Z" fill="#f97316"/>
+    </marker>
+    <marker id="arrowHeatOut" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M8 0 L0 3 L8 6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg19)"/>
+  <rect x="1" y="1" width="638" height="358" fill="none" stroke="#2d2d32" stroke-width="1" rx="8"/>
+
+  <text x="320" y="26" fill="#e4e4e7" font-size="14" font-weight="600" font-family="system-ui,sans-serif" text-anchor="middle">Hull thermal environment</text>
+  <text x="320" y="44" fill="#71717a" font-size="11" font-family="system-ui,sans-serif" text-anchor="middle">Heating vs cooling balance - P_heat = eps sigma A (T^4 - T_amb^4)</text>
+
+  <g transform="translate(0, 55)">
+    <rect x="20" y="0" width="180" height="250" rx="6" fill="url(#sunSide)" stroke="#ea580c" stroke-width="1"/>
+    <text x="110" y="24" fill="#fed7aa" font-size="12" font-weight="600" font-family="system-ui,sans-serif" text-anchor="middle">Sun side</text>
+    <text x="110" y="44" fill="#fdba74" font-size="14" font-family="system-ui,sans-serif" text-anchor="middle">+120 C to +80 C</text>
+    <line x1="60" y1="70" x2="120" y2="70" stroke="#f97316" stroke-width="2" marker-end="url(#arrowHeatIn)"/>
+    <line x1="60" y1="110" x2="120" y2="110" stroke="#f97316" stroke-width="2" marker-end="url(#arrowHeatIn)"/>
+    <line x1="60" y1="150" x2="120" y2="150" stroke="#f97316" stroke-width="2" marker-end="url(#arrowHeatIn)"/>
+    <text x="50" y="115" fill="#a1a1aa" font-size="9" font-family="system-ui,sans-serif">Q_in</text>
+  </g>
+
+  <g transform="translate(220, 80)">
+    <rect x="0" y="0" width="200" height="200" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="2"/>
+    <rect x="8" y="8" width="184" height="184" rx="4" fill="#18181b" stroke="#22c55e" stroke-width="1" opacity="0.6"/>
+    <text x="100" y="95" fill="#71717a" font-size="11" font-family="system-ui,sans-serif" text-anchor="middle">Cabin</text>
+    <text x="100" y="115" fill="#a1a1aa" font-size="12" font-family="system-ui,sans-serif" text-anchor="middle">T_cabin ~ 20 C</text>
+    <text x="100" y="140" fill="#52525b" font-size="10" font-family="system-ui,sans-serif" text-anchor="middle">Heaters P_heat</text>
+    <text x="100" y="158" fill="#52525b" font-size="9" font-family="system-ui,sans-serif" text-anchor="middle">balance = cooling to space</text>
+  </g>
+
+  <g transform="translate(440, 55)">
+    <rect x="0" y="0" width="180" height="250" rx="6" fill="url(#spaceSide)" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="90" y="24" fill="#7dd3fc" font-size="12" font-weight="600" font-family="system-ui,sans-serif" text-anchor="middle">Deep space</text>
+    <text x="90" y="44" fill="#38bdf8" font-size="14" font-family="system-ui,sans-serif" text-anchor="middle">-170 C to -200 C</text>
+    <line x1="120" y1="70" x2="60" y2="70" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowHeatOut)"/>
+    <line x1="120" y1="110" x2="60" y2="110" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowHeatOut)"/>
+    <line x1="120" y1="150" x2="60" y2="150" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowHeatOut)"/>
+    <text x="130" y="115" fill="#a1a1aa" font-size="9" font-family="system-ui,sans-serif">Q_out</text>
+  </g>
+
+  <g transform="translate(0, 318)">
+    <rect x="20" y="0" width="600" height="32" rx="4" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+    <text x="320" y="20" fill="#71717a" font-size="11" font-family="system-ui,sans-serif" text-anchor="middle">Steady state: P_heat approx k * delta T  (Day 1)</text>
+  </g>
+</svg>
