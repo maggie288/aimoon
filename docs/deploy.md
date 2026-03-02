@@ -135,7 +135,8 @@
 7. **图片由 Vercel CDN 提供**
    - 剧集内图片、封面等来自 `frontend/public/images/`，由 Vercel 静态托管并通过 CDN 分发，不经过后端。
    - 前端通过 `/images-api/[media_id]` 路由根据 `public/images/manifest.json` 重定向到对应静态文件；未找到则显示占位图。
-   - 若在 `backend/media/images` 中新增或更新图片，可在项目根目录执行 `node scripts/sync-media-to-public.js`，将图片同步到 `frontend/public/images` 并更新 manifest。
+   - **生成新图**：运行 `python scripts/generate_media_images.py`（需配置 MINIMAX_API_KEY）时，会同时写入 `backend/media/images/` 与 `frontend/public/images/` 并更新 manifest，无需再跑同步脚本。
+   - 若有人工放入 `backend/media/images` 的文件，可在项目根目录执行 `node scripts/sync-media-to-public.js` 做一次性同步。
 
 ---
 

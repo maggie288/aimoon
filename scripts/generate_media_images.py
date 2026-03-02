@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-根据对话 JSON 中的图片块描述，调用 MiniMax 文生图生成图片并保存到 backend/media/images/。
-后端 GET /api/media/image/{media_id} 会优先返回这些文件，否则返回占位 SVG。
+根据对话 JSON 中的图片块描述，调用 MiniMax 文生图生成图片。
+保存到 backend/media/images/ 与 frontend/public/images/，并更新 frontend manifest，
+便于 Vercel CDN 直接提供图片，无需再跑 sync 脚本。
 
 使用前：
   - 配置 backend/.env 中的 MINIMAX_API_KEY（文生图可用国际 api.minimax.io 或国内 api.minimaxi.com）
@@ -32,6 +33,9 @@ from services.image_minimax import generate_image
 
 DATA_DIR = BACKEND / "data" / "conversations"
 IMAGE_DIR = BACKEND / "media" / "images"
+# 前端静态资源目录，生成图片同时写入此处并更新 manifest
+FRONTEND_IMAGE_DIR = REPO / "frontend" / "public" / "images"
+MANIFEST_PATH = FRONTEND_IMAGE_DIR / "manifest.json"
 
 
 def collect_image_blocks(lang: str = ""):
@@ -59,6 +63,19 @@ def collect_image_blocks(lang: str = ""):
     return seen
 
 
+def _update_frontend_manifest(media_id: str, filename: str) -> None:
+    """在 frontend/public/images/manifest.json 中增加或更新 media_id -> filename。"""
+    FRONTEND_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    manifest = {}
+    if MANIFEST_PATH.exists():
+        try:
+            manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    manifest[media_id] = filename
+    MANIFEST_PATH.write_text(json.dumps(manifest, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Generate images from conversation image blocks via MiniMax.")
     ap.add_argument("--dry-run", action="store_true", help="Only list media_id, do not call API")
@@ -66,6 +83,7 @@ def main():
     args = ap.parse_args()
 
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    FRONTEND_IMAGE_DIR.mkdir(parents=True, exist_ok=True)
     items = collect_image_blocks(args.lang)
     if not items:
         print("No image blocks found in conversations.")
@@ -73,8 +91,20 @@ def main():
 
     print(f"Found {len(items)} image block(s).")
     for media_id, description in items.items():
-        if any((IMAGE_DIR / f"{media_id}{e}").is_file() for e in (".png", ".jpg", ".jpeg", ".webp")):
-            print(f"  [skip] {media_id} (already exists)")
+        existing_ext = None
+        for e in (".png", ".jpg", ".jpeg", ".webp", ".svg"):
+            if (IMAGE_DIR / f"{media_id}{e}").is_file():
+                existing_ext = e
+                break
+        if existing_ext is not None:
+            # 后端已有：若 frontend 没有则复制过去并更新 manifest
+            fe_file = FRONTEND_IMAGE_DIR / f"{media_id}{existing_ext}"
+            if not fe_file.is_file():
+                fe_file.write_bytes((IMAGE_DIR / f"{media_id}{existing_ext}").read_bytes())
+                _update_frontend_manifest(media_id, f"{media_id}{existing_ext}")
+                print(f"  [sync] {media_id} -> frontend/public/images/")
+            else:
+                print(f"  [skip] {media_id} (already exists)")
             continue
         if args.dry_run:
             print(f"  [would generate] {media_id}: {description[:50]}...")
@@ -86,9 +116,12 @@ def main():
         if raw:
             # MiniMax 可能返回 JPEG；按魔数选择扩展名
             ext = ".jpg" if raw[:2] == b"\xff\xd8" else ".png"
-            out = IMAGE_DIR / f"{media_id}{ext}"
-            out.write_bytes(raw)
-            print(f"    -> {out}")
+            filename = f"{media_id}{ext}"
+            # 同时写入 backend 与 frontend
+            (IMAGE_DIR / filename).write_bytes(raw)
+            (FRONTEND_IMAGE_DIR / filename).write_bytes(raw)
+            _update_frontend_manifest(media_id, filename)
+            print(f"    -> backend/media/images/ & frontend/public/images/ + manifest")
         else:
             print(f"    -> failed (check MINIMAX_API_KEY / balance / MINIMAX_IMAGE_DEBUG=1)")
 
