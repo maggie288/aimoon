@@ -1,0 +1,510 @@
+{
+  "date": "2026-03-07",
+  "day": 3,
+  "topic_title": "呼吸之间",
+  "topic_description": "氧气循环系统启动，第一次危机悄然逼近。",
+  "phase": "绝境逢生",
+  "messages": [
+    {
+      "role_id": "alice",
+      "timestamp": "08:00",
+      "content_blocks": [
+        {"type": "paragraph", "content": "昨天我们把能源基线定在 67%，24 小时采样也在跑。今天舱里要正式启动氧气循环——电解水制氧、CO₂ 清除、舱内分压稳定。听起来是「按按钮」的事，但每一口气都跟电绑在一起。陈伟，先从你这头说：三个人、一个月球日，氧和 CO₂ 的账怎么算？"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:00a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "这一集叫「呼吸之间」。呼吸——我们在地球上从不用想的事，在舱里变成一串数字和阀门。第一次危机不是爆炸，是某个曲线慢慢往上爬：CO₂ 浓度、或者氧分压掉了一点点。生命与脆弱，就在那一口气和下一口气之间。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:01",
+      "content_blocks": [
+        {"type": "paragraph", "content": "成人静息耗氧大约每公斤体重每天 3.5 毫升每分——换算成质量流，三个人按 70 公斤算，一天大约 0.84 公斤氧。CO₂ 呼出比大约是呼吸商 RQ ≈ 0.85，所以每天产生 CO₂ 约 0.72 公斤。舱容积我们按 120 立方米算，要维持 ppO₂ 在 20–22 kPa、ppCO₂ 低于 0.5 kPa，就需要持续补氧、持续清 CO₂。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:02",
+      "content_blocks": [
+        {"type": "math", "content": "\\dot{m}_{\\text{O}_2} \\approx \\frac{3 \\times 70\\,\\text{kg} \\times 3.5\\,\\text{mL/(min·kg)} \\times 60\\times24}{10^6} \\times \\rho_{\\text{O}_2} \\approx 0.84\\,\\text{kg/day}"},
+        {"type": "paragraph", "content": "电解水：2H₂O → O₂ + 2H₂。每产生 1 公斤氧，理论上要电解约 1.125 公斤水，耗电大约 4–5 kWh/kg O₂（实际系统含泵、控制、效率损失会更高，我们按 5.5 kWh/kg 做预算）。所以光制氧这一项，三人一天就要约 4.6 kWh，占昨天 67% 功率下一日发电量的一成多。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:03",
+      "content_blocks": [
+        {"type": "paragraph", "content": "所以「呼吸」不是免费的。他们每吸一口气，背后是电在烧。昨天还在为功率掉到 67% 发愁，今天就要用这 67% 来撑起肺。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:04",
+      "content_blocks": [
+        {"type": "paragraph", "content": "CO₂ 清除我们用的是一套吸附循环——锂氢氧化物或者分子筛，吸饱了要再生，再生要加热，加热又要电。所以 CO₂ 和 O₂ 是同一本账的两头：制氧耗电，清 CO₂ 也耗电。两边都要在 67% 的预算里挤。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:05",
+      "content_blocks": [
+        {"type": "paragraph", "content": "生命维持的功率优先级在系统里已经设成最高，但我们要跟他们说清楚：今天启动循环之后，监控面板上会多出两条曲线——舱内 ppO₂ 和 ppCO₂。正常的话两条线都稳在绿区；一旦有一条进黄区，就要按预案来，不能等。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:06",
+      "content_blocks": [
+        {"type": "math", "content": "p_{\\text{CO}_2} = \\frac{n_{\\text{CO}_2} R T}{V} \\quad \\Rightarrow \\quad \\text{若 } V=120\\,\\text{m}^3,\\; T=295\\,\\text{K},\\; \\dot{n}_{\\text{CO}_2}\\text{ 持续进入则 } p_{\\text{CO}_2} \\text{ 上升}"},
+        {"type": "paragraph", "content": "清除率不够的话，ppCO₂ 会缓慢上升。人能耐受的短期上限大约 1 kPa，再高就头痛、嗜睡、判断力下降。所以黄区设在 0.4 kPa，红区 0.6 kPa。到黄区就要加大清除或切备用罐，不能拖到红区。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:07",
+      "content_blocks": [
+        {"type": "image", "media_id": "img21", "description": "氧气与 CO₂ 循环示意图：电解槽、水储罐、O₂ 注入舱内；CO₂ 吸附罐、再生加热、气体回路；标注 ppO₂/ppCO₂ 监测点与绿/黄/红区。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:07a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "管路接口和阀门要标清楚：哪条是氧、哪条是氢、哪条是 CO₂ 出口。三个人都要认得，不能只有一个人会操作。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:08",
+      "content_blocks": [
+        {"type": "paragraph", "content": "他们第一次盯着那两条线的时候，可能会想：我们吸的每一口气，都在这上面。那种感觉——不是恐惧，是一种很清醒的「我们靠机器活着」。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:09",
+      "content_blocks": [
+        {"type": "paragraph", "content": "电解槽启动顺序要写进清单：先确认水罐液位、管路密封，再上电；先低负荷跑几分钟，再拉到设计流量。突然全开容易触发保护，反而耽误事。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:10",
+      "content_blocks": [
+        {"type": "mermaid", "content": "graph LR\n    subgraph 输入\n        W[水罐]\n    end\n    subgraph 制氧\n        E[电解槽]\n    end\n    subgraph 舱内\n        C[舱体 120m³]\n    end\n    subgraph 清除\n        S[CO₂ 吸附/再生]\n    end\n    W --> E\n    E -->|O₂| C\n    C -->|CO₂| S\n    S --> C\n    style E fill:#eab30833\n    style S fill:#64748b33"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:10a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "电解槽一开，舱内会多一种低频嗡鸣。他们得习惯这个声音——那是「氧在造」的动静。和昨天功率曲线的数字一样，听久了会变成背景，但永远别真当背景。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:10b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "第一次启动前可以让他们复诵一句：我们即将启动氧气循环，按清单执行，优先保呼吸。和昨天「我们在采数据」一样，是一句心理锚点。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:11",
+      "content_blocks": [
+        {"type": "paragraph", "content": "67% 功率下，日均发电大概 30 kWh 量级。生命维持——制氧加 CO₂ 清除加风机和控温——粗算要占到 8–10 kWh。剩下才是通信、科学、照明、热控。所以昨天定的 L1/L2 卸载顺序不能忘：真到了功率吃紧，先保呼吸，再保别的。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:11a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "系统里可以把「生命维持」设成一个不可卸载的负载组。L2 时关科学、关娱乐；L1 时只留生命维持加通信。这样就不会有人误操作把制氧关掉。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:11b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "制氧和 CO₂ 清除要是停了，舱内还能撑多久？取决于泄漏和容积。粗略说，密封好的话几小时到十几小时。所以报警一响，反应时间是以小时计的，但不是以天计的。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:12",
+      "content_blocks": [
+        {"type": "paragraph", "content": "「先保呼吸」——这句话他们今天会听到很多遍。不是吓唬人，是让他们心里有底：万一报警响了，知道该先顾哪头。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:13",
+      "content_blocks": [
+        {"type": "paragraph", "content": "CO₂ 吸附罐有两组，可以轮换：一组在吸，一组在再生。再生周期要记下来，不能两组同时到寿命还没换。清单上写：每 8 小时检查一次吸附罐状态，接近饱和就切换并启动再生。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:14",
+      "content_blocks": [
+        {"type": "paragraph", "content": "监控界面可以做一个「呼吸状态」卡片：当前 ppO₂、ppCO₂、电解槽功率、今日制氧量、今日 CO₂ 清除量。一眼能看出正不正常。再绑一个告警：任一分压出绿区就推送到主屏并语音提示。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:14a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "告警级别可以分两档：进黄区是「注意」，进红区是「紧急」。注意时 15 分钟内必须处置或升级；紧急时立即按预案来，同时通知地面。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:14b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "吸附罐再生时会有短暂加热，舱内可能多一点点热负荷。热控那边要知情，别误判成故障。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:15",
+      "content_blocks": [
+        {"type": "paragraph", "content": "水是制氧的原料。水罐存量要纳入每日简报——用了多少、还剩多少、按当前消耗能撑多少天。要是水紧张，制氧就要省，那就得减活动量或者接受舱内 ppO₂ 略降，在安全范围内调。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:16",
+      "content_blocks": [
+        {"type": "paragraph", "content": "第一次危机——我说的是那种「悄悄逼近」的危机——往往是曲线慢慢漂。没有人喊，没有爆炸，只是某个数字一点点不对劲。所以他们要习惯看曲线，而不是等警报。警报是最后一道防线。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:17",
+      "content_blocks": [
+        {"type": "paragraph", "content": "电解槽万一故障，我们有备用氧瓶——高压气态氧，够三个人撑几天。但那是应急，不能当日常。日常就靠电解。所以电解槽的维护和巡检要写进每日必做，和能源简报一样重要。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:18",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今天他们启动循环之后，前两个小时每 15 分钟记一次 ppO₂、ppCO₂、电解功率。数据发地面，我们两边一起看曲线稳不稳。稳了，再改成每小时一点。这样既不留盲区，又不至于一直盯着。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:18a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "前两小时的密集记录，也是在给他们一个「我们在认真对待」的信号。不是随便按个钮就完事，是每一步都有据可查。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:19",
+      "content_blocks": [
+        {"type": "math", "content": "P_{\\text{electrolysis}} \\approx 5.5\\,\\text{kWh/kg}_{\\text{O}_2} \\times \\dot{m}_{\\text{O}_2} \\approx 5.5 \\times \\frac{0.84}{24}\\,\\text{kW} \\approx 0.19\\,\\text{kW} \\quad \\text{(稳态制氧功率)}"},
+        {"type": "paragraph", "content": "实际运行里还有泵、控制、散热，总功率会到 0.3 kW 左右。CO₂ 清除的风机和再生加热再加一点，整块生命维持呼吸这一块大约 0.5–0.6 kW 连续。对 67% 功率来说是可以接受的。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:20",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今天他们做完启动，可能会有一瞬间的沉默：听着风机转、看着数字进绿区。那一瞬间就是「呼吸之间」——我们把这口气接上了。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:20a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "绿区不是「完美」，是「安全」。ppO₂ 在 20–22 kPa、ppCO₂ 低于 0.4 kPa 都算绿区。让他们知道绿区的上下限，就不会为小数点后一位的波动紧张。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:20b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "地面今天会同步收到呼吸数据。两边看同一套曲线，舱里不会觉得「只有我们在扛」。和昨天功率数据一样，共享现实。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:21",
+      "content_blocks": [
+        {"type": "paragraph", "content": "气闸和舱内之间如果有压差，开门前要平衡。否则气流会把月尘带进来。所以「出舱前」清单里要加一条：确认气闸压力与舱内平衡，再开内门。呼吸和密封是连着的。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:22",
+      "content_blocks": [
+        {"type": "paragraph", "content": "总结成三句话给舱里：一、今天启动氧气循环，ppO₂ 和 ppCO₂ 进绿区就表示呼吸这一块稳了；二、制氧和清 CO₂ 都耗电，在 67% 预算内，优先保呼吸再保其他；三、任何一条曲线进黄区就按预案来，先处置再汇报。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:23",
+      "content_blocks": [
+        {"type": "paragraph", "content": "对。而且明天我们可以根据今天的数据微调：如果实际制氧功率比预估低，就有余量给别的；如果接近上限，就要提醒他们省电、别加非必要负载。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:24",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今晚他们躺下的时候，呼吸会跟昨天不一样——因为知道那口气是从哪来的、怎么来的。生命与脆弱，不是一句口号，是每天要算的一本账。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:25",
+      "content_blocks": [
+        {"type": "paragraph", "content": "备用氧瓶的压力和有效期也要进每日简报。万一电解挂了，我们能撑多久、地面什么时候能补送——心里要有数。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:25a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "交接班时加一句呼吸状态复诵：当前 ppO₂、ppCO₂ 在绿区，电解与清除正常。下一班的人带着这句话上岗，和能源复诵一样。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:25b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "水罐存量如果只够 N 天，简报里要写「按当前制氧速率，水可支撑 N 天」。他们需要知道这条线在哪里，才能决定要不要省水、省电。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:26",
+      "content_blocks": [
+        {"type": "image", "media_id": "img22", "description": "舱内大气监控面板概念图：ppO₂、ppCO₂ 实时曲线，绿/黄/红区，电解功率与今日制氧量、CO₂ 清除量数字显示。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:27",
+      "content_blocks": [
+        {"type": "paragraph", "content": "如果以后写这一集，标题已经有了：「呼吸之间」。不是喘一口气的间隙——是每一口气都连着一根线，线的那头是电、是水、是三个人共同的脆弱和共同的坚持。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:28",
+      "content_blocks": [
+        {"type": "paragraph", "content": "第一次危机「悄然逼近」——我们可以设计成：今天下午某时刻 ppCO₂ 缓慢上升，清除率略低于产生率，触到 0.35 kPa。他们按预案切换吸附罐、加大风机，半小时后曲线回落。没有伤亡，但有了一次「我们真的在靠机器呼吸」的实感。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:28a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "这个「小危机」的数据要完整保留：上升段、处置动作、回落段。以后训练和复盘都用得上，也能写进任务报告。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:29",
+      "content_blocks": [
+        {"type": "paragraph", "content": "预案里要写清楚：谁负责看曲线、谁负责操作切换、谁负责跟地面说。三个人不能都去动阀门，也不能没人管。和昨天关负载一样，分工明确。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:30",
+      "content_blocks": [
+        {"type": "paragraph", "content": "地面今天收到的前两小时密集数据，可以用来建一个简单的呼吸模型：实际耗氧率、清除效率、舱容积的有效混合。以后预测「还能撑多久」就更有依据。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:30a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "吸附罐切换操作要练过。模拟器里走一遍「ppCO₂ 进黄区、切换罐、启动再生」的流程，到了月面才不会手忙脚乱。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:30b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "那一次缓升如果发生，不要事后怪谁。就说是「系统在边界上跑，我们按预案处置了」。把事说成「我们搞定了」而不是「差点出事」，心态会稳很多。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:30c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "对。而且 0.35 kPa 离红区还远，正好是一次无伤大雅的演练。真到了 0.5 再练就晚了。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:31",
+      "content_blocks": [
+        {"type": "paragraph", "content": "那一次 ppCO₂ 缓升——如果他们事后复盘，会说：我们按预案做了，曲线回来了。那种「我们做到了」比什么安慰都管用。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:32",
+      "content_blocks": [
+        {"type": "math", "content": "\\text{清除率 } \\dot{V}_{\\text{CO}_2} \\geq \\dot{n}_{\\text{CO}_2} \\cdot \\frac{RT}{p} \\quad \\text{才能稳态；否则 } p_{\\text{CO}_2} \\uparrow"},
+        {"type": "paragraph", "content": "所以吸附罐的通过流量和再生频率要匹配三人产生的 CO₂。设计时已经算过，但月面实际代谢率可能略有波动，今天的数据可以验证。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:33",
+      "content_blocks": [
+        {"type": "paragraph", "content": "电解槽的氢气要排到舱外或者进氢氧反应器烧掉，不能积在舱里。排氢管路的压力和泄漏检查也要进清单。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:33a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "氢要是漏进舱里，和氧混到一定比例会爆。所以排氢管路的检漏和「氢浓度监测」要绑在一起，不能只靠目视。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:33b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "反应器烧氢生成水，那部分水可以回收到制氧循环。闭环越紧，水耗越慢，对长期越有利。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:34",
+      "content_blocks": [
+        {"type": "paragraph", "content": "每日简报里「呼吸状态」放第二块——第一块还是能源。这样他们每天先看电、再看气。两本账都清楚，心里才稳。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:34a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "呼吸资源卡片上可以加一行小字：按当前消耗，水可支撑 X 天、备用氧可支撑 Y 小时。数字每天更新，他们就有预期。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:35",
+      "content_blocks": [
+        {"type": "paragraph", "content": "明天是「冰与火」——温差、设备故障、可能有人受伤。今天把呼吸接上，明天才有底气面对下一关。一关一关过。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:35a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "呼吸和热控是连着的——舱内温度高了，人代谢快、CO₂ 产生略多；温度稳，呼吸负荷就稳。所以明天冰与火那一集，和今天这本账也有关系。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:35b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "氢氧反应器如果烧氢，产物是水，可以回收到水罐。这样氢不浪费、还多一点水给电解。闭环能多闭一点是一点。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:36",
+      "content_blocks": [
+        {"type": "image", "media_id": "img23", "description": "ppCO₂ 缓升与处置示意：横轴时间，纵轴 ppCO₂ (kPa)；曲线缓慢上升至 0.35，切换吸附罐后回落；标注黄区阈值与处置节点。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:37",
+      "content_blocks": [
+        {"type": "paragraph", "content": "水罐液位、氧瓶压力、吸附罐状态——这三样可以做成一个「呼吸资源」小卡片，和功率卡片并排。一眼扫过去就知道今天能不能放心喘气。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:38",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今天舱里如果问地面：我们启动循环了，数字都正常，接下来呢？地面可以回：保持监测，前两小时按 15 分钟一点报数据，稳了再放宽。不要加新任务，先把这一口气稳住。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:38a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "启动当天不要安排出舱或重体力。呼吸系统在适应新负荷，人也在适应新噪音和新节奏。稳一天再上强度。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:39",
+      "content_blocks": [
+        {"type": "paragraph", "content": "「呼吸之间」——也是「我们和那三个人之间」。他们喘气，我们算账。他们看曲线，我们看同样的曲线。同一本账，才能一起过关。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:40",
+      "content_blocks": [
+        {"type": "paragraph", "content": "电解效率会随水温、水质略有变化。长期看要记录每公斤氧的实际电耗，和 5.5 kWh/kg 的基线对比。偏差大了就排查：电极、膜、泵。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:40a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今晚他们可能会想：我们喘的每一口气，都是电和水换来的。那种感觉——脆弱，但也清醒。生命与脆弱，不是贬义，是事实。承认事实，才能把预案当真。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:40b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "明天冰与火如果真有人受伤，医疗用氧也在同一套系统里。所以今天把呼吸基线稳住，明天无论是舱内大气还是急救氧，都有底气。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:41",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今天就到这儿。氧气循环启动、呼吸状态卡片、ppCO₂ 预案和资源简报——我们这边该定的都定了。剩下的交给他们和地面。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:42",
+      "content_blocks": [
+        {"type": "paragraph", "content": "愿他们今晚听着风机声入睡时，想的是「我们把这口气接上了」——而不是「我们差点没接上」。零号营地，Day 3。明天见。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:43",
+      "content_blocks": [
+        {"type": "paragraph", "content": "明天聊冰与火：极端温差、设备故障、可能有人受伤。今天把呼吸稳住，明天才有资本扛下一波。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:44",
+      "content_blocks": [
+        {"type": "image", "media_id": "img24", "description": "「呼吸之间」概念图：舱内三人，背景为氧气循环示意与 ppO₂/ppCO₂ 曲线；暖光与绿区数字，氛围平静但紧绷。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:45",
+      "content_blocks": [
+        {"type": "image", "media_id": "img25", "description": "电解槽与吸附罐实物/示意图：电解槽外形、水氧接口；CO₂ 吸附罐双组轮换、再生加热指示；标注维护检查点。"}
+      ]
+    }
+  ]
+}

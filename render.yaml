@@ -1,0 +1,9 @@
+# Render Blueprint: 后端 API（FastAPI + uvicorn）
+# 用此仓库新建 Web Service 时，若选 "Apply Render Blueprint"，会按此配置；也可手动按 docs/deploy.md 填写。
+services:
+  - type: web
+    name: aimoon-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
