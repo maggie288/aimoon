@@ -35,6 +35,20 @@
       ]
     },
     {
+      "role_id": "oldtom",
+      "timestamp": "08:02a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "水罐里的水是电解的原料，也是他们喝的水。制氧和饮用要一起算进「水预算」。不能光顾制氧把饮用水挤没了。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:02b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "每日简报里可以分两行：制氧用水、饮用与其它。这样他们知道两头的消耗，心里有数。"}
+      ]
+    },
+    {
       "role_id": "elena",
       "timestamp": "08:03",
       "content_blocks": [
@@ -49,10 +63,24 @@
       ]
     },
     {
+      "role_id": "elena",
+      "timestamp": "08:04a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "昨天他们学会了「电从哪来、够不够」；今天要学「气从哪来、够不够」。两本账都清楚了，才真的从「幸存」往「生活」挪一步。"}
+      ]
+    },
+    {
       "role_id": "alice",
       "timestamp": "08:05",
       "content_blocks": [
         {"type": "paragraph", "content": "生命维持的功率优先级在系统里已经设成最高，但我们要跟他们说清楚：今天启动循环之后，监控面板上会多出两条曲线——舱内 ppO₂ 和 ppCO₂。正常的话两条线都稳在绿区；一旦有一条进黄区，就要按预案来，不能等。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:05a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "绿区、黄区、红区的具体数值要写进飞行规则，和 L1/L2 一样。到了月面不随便改，只做执行。这样他们和地面对「什么叫注意、什么叫紧急」理解一致。"}
       ]
     },
     {
@@ -82,6 +110,13 @@
       "timestamp": "08:08",
       "content_blocks": [
         {"type": "paragraph", "content": "他们第一次盯着那两条线的时候，可能会想：我们吸的每一口气，都在这上面。那种感觉——不是恐惧，是一种很清醒的「我们靠机器活着」。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:08a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "曲线历史要保留至少 24 小时。这样万一出了事，可以倒推：是慢慢漂上去的还是突然跳的。对复盘和改预案都有用。"}
       ]
     },
     {
@@ -141,6 +176,13 @@
       ]
     },
     {
+      "role_id": "chenwei",
+      "timestamp": "08:12a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "预案里可以加一句：呼吸报警时，手头别的事先停。不是说不重要，是呼吸一旦出问题，几分钟就能到不可逆。优先级要刻进本能。"}
+      ]
+    },
+    {
       "role_id": "oldtom",
       "timestamp": "08:13",
       "content_blocks": [
@@ -176,10 +218,31 @@
       ]
     },
     {
+      "role_id": "oldtom",
+      "timestamp": "08:15a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "水罐液位传感器要可靠。万一误读成「还有很多」实际见底了，会出大事。清单上写：每天目视或二次确认一次液位，和传感器对照。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:15b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "「按当前消耗能撑多少天」——这个数字会让他们有边界感。知道线在哪里，就不会无意识地浪费，也不会瞎焦虑。"}
+      ]
+    },
+    {
       "role_id": "elena",
       "timestamp": "08:16",
       "content_blocks": [
         {"type": "paragraph", "content": "第一次危机——我说的是那种「悄悄逼近」的危机——往往是曲线慢慢漂。没有人喊，没有爆炸，只是某个数字一点点不对劲。所以他们要习惯看曲线，而不是等警报。警报是最后一道防线。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:16a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "我们可以设一个「趋势告警」：曲线连续 30 分钟往坏的方向走就提前提醒，不必等进黄区。这样处置窗口更长。"}
       ]
     },
     {
@@ -247,10 +310,38 @@
       ]
     },
     {
+      "role_id": "elena",
+      "timestamp": "08:22a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "这三句话可以写进今日简报的抬头，和昨天的能源三句一样。醒来一点开，先看到呼吸的「底线」是什么。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:22b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "交接班时复诵呼吸状态：当前 ppO₂、ppCO₂ 在绿区，电解与清除正常。下一班带着这句话上岗，和能源、密封一样，形成习惯。"}
+      ]
+    },
+    {
       "role_id": "chenwei",
       "timestamp": "08:23",
       "content_blocks": [
         {"type": "paragraph", "content": "对。而且明天我们可以根据今天的数据微调：如果实际制氧功率比预估低，就有余量给别的；如果接近上限，就要提醒他们省电、别加非必要负载。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:23a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "地面今天会同步看呼吸数据。舱里报「循环已启动、数字正常」时，地面回一句「收到，我们这边曲线也看到了」——确认两边在同一页上。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:23b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今晚他们躺下时，脑子里可能会过一遍：电 67%、气接上了、两条线在绿区。三个锚点都稳，才敢闭眼。"}
       ]
     },
     {
@@ -293,6 +384,13 @@
       "timestamp": "08:27",
       "content_blocks": [
         {"type": "paragraph", "content": "如果以后写这一集，标题已经有了：「呼吸之间」。不是喘一口气的间隙——是每一口气都连着一根线，线的那头是电、是水、是三个人共同的脆弱和共同的坚持。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:27a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "明天冰与火会扯到热控和伤情。今天把呼吸和电两本账都稳住，明天才有余力应对新变量。一关一关过，别一起压上来。"}
       ]
     },
     {
@@ -352,11 +450,25 @@
       ]
     },
     {
+      "role_id": "alice",
+      "timestamp": "08:31a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "处置过程要记进任务日志：几点触黄、谁决策、谁操作、几点回落。以后写报告、做培训都有据可查。"}
+      ]
+    },
+    {
       "role_id": "chenwei",
       "timestamp": "08:32",
       "content_blocks": [
         {"type": "math", "content": "\\text{清除率 } \\dot{V}_{\\text{CO}_2} \\geq \\dot{n}_{\\text{CO}_2} \\cdot \\frac{RT}{p} \\quad \\text{才能稳态；否则 } p_{\\text{CO}_2} \\uparrow"},
         {"type": "paragraph", "content": "所以吸附罐的通过流量和再生频率要匹配三人产生的 CO₂。设计时已经算过，但月面实际代谢率可能略有波动，今天的数据可以验证。"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:32a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "「匹配」听起来很技术，对他们来说就是：罐子按时换、再生按时跑，数字就稳。把复杂的事变成清单上的勾，心理负担会小很多。"}
       ]
     },
     {
@@ -430,6 +542,20 @@
       ]
     },
     {
+      "role_id": "elena",
+      "timestamp": "08:37a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "「放心喘气」——在地球上没人会想这句话。在舱里，这是每天要确认一次的事。承认这种差异，他们才会认真对待每一个勾。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:37b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "呼吸资源卡片上可以加一行：下次吸附罐计划切换时间。这样他们知道「还有多久要动一次手」，不会忘。"}
+      ]
+    },
+    {
       "role_id": "alice",
       "timestamp": "08:38",
       "content_blocks": [
@@ -448,6 +574,13 @@
       "timestamp": "08:39",
       "content_blocks": [
         {"type": "paragraph", "content": "「呼吸之间」——也是「我们和那三个人之间」。他们喘气，我们算账。他们看曲线，我们看同样的曲线。同一本账，才能一起过关。"}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:39a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "地面别今天又塞一堆新建议。今天只做三件事：启动循环、看住曲线、按预案处置。其它想法记下来明天再说。和昨天能源一样，稳一天再扩展。"}
       ]
     },
     {
@@ -483,6 +616,20 @@
       "timestamp": "08:42",
       "content_blocks": [
         {"type": "paragraph", "content": "愿他们今晚听着风机声入睡时，想的是「我们把这口气接上了」——而不是「我们差点没接上」。零号营地，Day 3。明天见。"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:42a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "明天冰与火会聊热控和可能的伤情。热控和呼吸都耗电，所以今天的 67% 和呼吸基线，是明天讨论「极端温差下怎么保人」的前提。"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:42b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "今天如果舱里问「我们接下来干什么」，地面回：保持监测，前两小时 15 分钟一点报数据，稳了再放宽。不要加新任务。和昨天一样，先把这一页翻稳。"}
       ]
     },
     {

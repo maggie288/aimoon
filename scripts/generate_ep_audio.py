@@ -13,6 +13,7 @@ import asyncio
 import json
 import sys
 from pathlib import Path
+from typing import List, Optional
 
 REPO = Path(__file__).resolve().parent.parent
 BACKEND = REPO / "backend"
@@ -36,18 +37,35 @@ def get_message_text(msg: dict) -> str:
     return " ".join(parts)
 
 
+def normalize_tts_text(text: str) -> str:
+    """替换可能导致 edge-tts 无响应的字符（如 Unicode 下标）。"""
+    if not text:
+        return text
+    # Unicode 下标 → 普通数字，避免 "No audio was received"
+    t = text.replace("\u2082", "2").replace("\u2081", "1")  # ₂ ₁
+    t = t.replace("\u2090", "0")  # ₀
+    return t
+
+
 async def generate_one(voice: str, rate: str, pitch: str, text: str, out_path: Path) -> bool:
-    try:
-        import edge_tts
-        communicate = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch)
-        await communicate.save(str(out_path))
-        return True
-    except Exception as e:
-        print(f"    error: {e}", file=sys.stderr)
-        return False
+    import asyncio
+    text = normalize_tts_text(text)
+    for attempt in range(3):
+        try:
+            import edge_tts
+            communicate = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch)
+            await communicate.save(str(out_path))
+            if out_path.stat().st_size == 0:
+                raise RuntimeError("Saved file is 0 bytes")
+            return True
+        except Exception as e:
+            print(f"    error (attempt {attempt + 1}/3): {e}", file=sys.stderr)
+            if attempt < 2:
+                await asyncio.sleep(2)
+    return False
 
 
-async def main_async(date: str, dry_run: bool):
+async def main_async(date: str, dry_run: bool, only_indices: Optional[List[int]]):
     path = DATA_DIR / f"{date}.json"
     if not path.is_file():
         print(f"Not found: {path}")
@@ -61,6 +79,8 @@ async def main_async(date: str, dry_run: bool):
     messages = data.get("messages") or []
     total = 0
     for i, msg in enumerate(messages):
+        if only_indices is not None and i not in only_indices:
+            continue
         text = get_message_text(msg)
         if not text.strip():
             continue
@@ -88,13 +108,17 @@ def main():
     ap = argparse.ArgumentParser(description="Pre-generate Chinese TTS for an episode (date.json) with edge-tts.")
     ap.add_argument("date", nargs="?", default="2026-03-05", help="Episode date, e.g. 2026-03-06")
     ap.add_argument("--dry-run", action="store_true", help="Only list messages, do not generate")
+    ap.add_argument("--only-indices", type=str, default=None, help="Comma-separated indices to generate, e.g. 79,81,85")
     args = ap.parse_args()
+    only_indices = None
+    if args.only_indices:
+        only_indices = [int(x.strip()) for x in args.only_indices.split(",")]
     try:
         import edge_tts  # noqa: F401
     except ImportError:
         print("Install: pip install edge-tts", file=sys.stderr)
         return 1
-    return asyncio.run(main_async(args.date, args.dry_run))
+    return asyncio.run(main_async(args.date, args.dry_run, only_indices))
 
 
 if __name__ == "__main__":
