@@ -1,0 +1,1197 @@
+{
+  "date": "2026-03-05",
+  "day": 1,
+  "topic_title": "First Light",
+  "topic_description": "Landing module touches down; temporary shelter is established within six hours.",
+  "phase": "Against the Odds",
+  "messages": [
+    {
+      "role_id": "alice",
+      "timestamp": "08:00",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Okay, we're all connected. Today we're only talking about one thing: those three people, just landed. The hatch hasn't been opened yet—outside is the rim of Shackleton, one side blazing bright, the other pitch black. For the next six hours, what are they doing in that can? Not \"in theory\"—really: you only have six hours, limited power, limited air, and the ground doesn't even know you're alive yet. Chen Wei, you first: from your perspective, what are they really racing against?"
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:00a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "We're calling today's episode \"First Light.\" Not sunrise—the six hours after touchdown when they have to turn \"we're still alive\" into something real, in the dark and the unknown. There will be fear; there will be \"what if we don't make it.\" But it's the checklist, the callbacks, and each other that turn that fear into resolve, step by step."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:01",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Time, leaks, and battery. We chose Shackleton because of the \"Peak of Eternal Light\" nearby—almost constant sun, good for solar panels later; the crater floor is permanent shadow with water ice. But the cost: one side of you is baking, the other faces the deep freeze of space. The hull has to handle that temperature gradient."
+        },
+        {
+          "type": "image",
+          "media_id": "img2",
+          "description": "Shackleton crater and Peak of Eternal Light diagram: top-down view of the lunar south pole, showing crater, high-illumination zone on the peak, permanent shadow and water-ice distribution in the crater, landing site near the terminator on the rim."
+        },
+        {
+          "type": "paragraph",
+          "content": "Keeping people breathing and neither frozen nor overheated inside the cabin—that's all on power. Six hours, rough estimate: at least 12 kilowatt-hours. The batteries are there, but they're sized for \"plug into the sun soon.\" If you can't? You have to shut things off. What to shut off and what to keep—that has to be decided beforehand, not argued about after landing."
+        },
+        {
+          "type": "image",
+          "media_id": "img3",
+          "description": "Six-hour energy and load schematic: horizontal axis 0–6h, vertical axis charge; battery capacity line and life-support demand line, 12 kWh and minimum-load zone, switchable-load zone labeled."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:03",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "So during those six hours, they're not just thinking \"is it leaking, is there enough power,\" right? I mean—outside the window is that view, there's no \"tomorrow morning\" to wait for, only \"can we make it through this stretch.\" In that situation, people need a sense of \"we've finished something.\" Otherwise they panic."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:04",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. So you can't just give them a pile of steps—they need to know: when we finish this step, we're that much safer."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:04a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "I'm thinking of Apollo 11 after landing—Armstrong and Aldrin stayed inside the cabin for hours before opening the hatch. Those hours they were doing checks, talking to the ground, confirming everything was nominal. So \"stabilize first, then go out\" has precedent."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:04b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And those hours of checklists were essentially doing the three things we're talking about: pressure, power, comms. We just have better sensors and automation now, but the logic hasn't changed."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:05",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Let me jump in. In Apollo, the first thing after landing was also: is this can leaking? The gear is better now, but the principle is the same—if it's leaking, nothing else matters. The lunar surface isn't like the station. On station you can retreat to another module. On the Moon you've got this one skin. So in those six hours, leak check is number one. And don't open the hatch. Open it and lunar dust gets in—that stuff is fine and electrostatic, it eats seals. First night, I'm firmly against any EVA."
+        },
+        {
+          "type": "image",
+          "media_id": "img4",
+          "description": "Apollo LM vs modern lander: pressure boundary, airlock, life-support interfaces labeled."
+        },
+        {
+          "type": "image",
+          "media_id": "img5",
+          "description": "Lunar dust and seal-surface risk: lunar dust particle close-up, seal wear schematic, no-EVA-within-6h icon."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:06a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The leak-check order can go \"inside out\": first cabin pressure sensors and pipe fittings, then the airlock inner seal face, last the docking interface. That way if the leak is outside, at least the cabin is stable first."
+        },
+        {
+          "type": "paragraph",
+          "content": "Pressure sensors themselves need a drift check. Landing shock can shift the zero point a bit, so run a sensor self-test before leak check, confirm the readings are trustworthy, then start recording leak rate."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:06b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And the leak-rate reading for each step has to be recorded and compared to the pre-mission baseline. Over the line and you stop—no guessing."
+        },
+        {
+          "type": "paragraph",
+          "content": "The electronic checklist can enforce hard limits: if a leak rate is over limit, lock out \"next step\" until it's handled or escalated. That way the flow can't be bypassed."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:07",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Agreed. Priority is: seal > power and thermal > comms. Lose comms and people can still live. Leak and you're gone in minutes. But comms can't stay down too long or the ground thinks you're gone and everything goes sideways. So within six hours we need at least a \"heartbeat\"—one packet per minute: we're alive, pressure, battery, temperature all nominal. Ground gets it and relaxes; if they don't, they proceed as worst case."
+        },
+        {
+          "type": "mermaid",
+          "content": "graph LR\n    A[Leak check] --> B[Power and thermal]\n    B --> C[Comms heartbeat]\n    C --> D[Ground at ease]\n    style A fill:#1e3a2f\n    style B fill:#3d2e1f\n    style C fill:#1e2a3a"
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:09",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "\"We're still alive\"—saying that itself gives those three an anchor. Sending it means: we still have power, we still have the antenna, we can still be heard."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:09a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The heartbeat payload can be minimal: pressure value, battery percent, cabin temp, and a status code. Ground sees the code in nominal range and doesn't spiral. We used the same kind of short-cycle telemetry on station to keep the ground calm."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:09b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "That \"check off, count\" action is also a psychological anchor. In extreme environments people need countable progress—how many items left, how many steps—better than vague \"we're working on it.\""
+        },
+        {
+          "type": "paragraph",
+          "content": "So don't make the checklist too long or too fine. Each item should be \"one person can finish in ten or twenty minutes.\" Too many items and you never finish checking—that breeds anxiety."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:10",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "You can think of it that way. Leak rate is calculable. The cabin is a fixed volume; a little leak and pressure drifts down. Six hours is enough to see the trend. So leak check isn't about \"is there a hole\"—it's confirming the leak is slow enough that we're safe for six hours."
+        },
+        {
+          "type": "math",
+          "content": "p(t) = p_0 - \\frac{Q \\cdot t}{V}, \\quad Q \\leq Q_{\\max} \\Rightarrow \\Delta p(6\\,\\text{h}) \\leq \\Delta p_{\\text{allow}}"
+        },
+        {
+          "type": "paragraph",
+          "content": "Pressure drops over time; the faster the leak, the faster it drops. Mission design has a maximum allowable leak rate Q_max; leak check is asking: are we below that line?"
+        },
+        {
+          "type": "image",
+          "media_id": "img20",
+          "description": "Pressure decay: sealed cabin, gauge from 101 kPa over 0→6 h; if leak rate within limit, pressure stays stable."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:10a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "When those three are staring at the pressure curve in the cabin, they're really waiting for one answer: are we safe, or are we leaking? Those few minutes of waiting can feel very long. So the list should spell out: how long to wait after checking each zone before recording, when they can check off. Having clear time points is much more grounding than \"feels about right.\""
+        },
+        {
+          "type": "paragraph",
+          "content": "A lot of space accident reviews mention \"judgment errors under time pressure.\" Giving enough wait time and not forcing people to check off while uncertain—that's how you reduce those errors."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:11",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "We can turn leak-rate data into a live curve: time on the horizontal axis, pressure or equivalent leak rate on the vertical. All three see the same line. Line in the green zone—keep going; yellow—alert; red—escalate per procedure. No one has to call out numbers; the plot says it."
+        },
+        {
+          "type": "paragraph",
+          "content": "That kind of visualization really helps under stress. The brain processes \"a line moving up\" faster than \"last reading was 0.02, now it's 0.025.\" So during leak check the main screen shows this one plot; primary and backup both watch it."
+        },
+        {
+          "type": "paragraph",
+          "content": "Label the green/yellow/red thresholds clearly next to the plot, consistent with the pre-mission baseline. Anyone looking knows which zone we're in and whether to act."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:11a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Leak-rate curve vertical axis units have to be unified—either pressure rate of change or equivalent leak rate. All three and the ground look at the same units, so we avoid \"is your 0.02 the same as my 0.02\" confusion. Put the unit definitions on the first page of the checklist before the mission; everyone defaults to that."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:12",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And leaks usually aren't a big hole—they're seal faces: door gaskets, valves, fittings. Launch and landing shake things; something can loosen. So you go through the checklist section by section: airlock, docking face, plumbing… I've seen it on station: a tiny bit of debris on a seal face and the leak rate crept up. So the first order of business isn't \"open the hatch and go out\"—it's confirming the can we're in doesn't leak."
+        },
+        {
+          "type": "image",
+          "media_id": "img6",
+          "description": "Leak-check list and key areas: lander schematic with airlock, docking face, life-support plumbing interfaces and other must-check points labeled."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:12a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The airlock door especially—inspect it closely. One open/close can bring in dust; check the seal face visually and by touch; if it feels sandy, report it. Sweep pipe fittings with the leak detector; only check off when the reading is stable."
+        },
+        {
+          "type": "paragraph",
+          "content": "After the leak detector sweeps an area, wait a minute or two and look at the reading again. Transient spikes don't count; you want the steady value. Best if one of the three is assigned \"read and record\" so you're not all staring at the same gauge."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:12b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Recorded leak rates have to be compared to the pre-mission baseline. The baseline is the \"nominal cabin\" leak range measured on the ground or in LEO. If the surface reading is within baseline, continue; if it's outside, trigger escalation. So the first page of the list, besides unit definitions, should state the baseline values and source—all three and the ground use the same standard."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:13",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "We can make the leak checklist electronic—check off each item as it's done, system logs the timestamp. Then post-flight analysis has a record, and none of the three has to fight over taking notes."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:13a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Check off, confirm—that small bit of ritual matters a lot in high-stress environments. The brain needs a \"done\" signal or it stays on edge."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:13b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One more benefit of an electronic checklist: you can lock items by phase. E.g. until leak check is done, power/thermal items are grayed out and unclickable. So no one accidentally jumps ahead. Phase order is enforced; fewer human errors."
+        },
+        {
+          "type": "code",
+          "content": "// Phase lock: next phase unlocks only when current is complete\n\nfunction canUnlockPhase(currentPhase, checklist) {\n  const order = ['seal', 'power_thermal', 'comm'];\n  const idx = order.indexOf(currentPhase);\n  if (idx < 0) return false;\n\n  const phaseComplete = checklist.phases[order[idx]].allChecked;\n  return phaseComplete && idx + 1 < order.length;\n}"
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:14",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Once the seal is stable, next is power and thermal. Life support, pressure monitoring, minimum comms—those stay on. Science instruments, arm, extra lighting—shut off if you can. The power and thermal you save is \"hold out a bit longer\" margin. I'll bake the \"minimum load list\" and \"how to shed load in a fault\" into the system. On the surface they follow the list to shed load; no need for the three to calculate on the spot."
+        },
+        {
+          "type": "image",
+          "media_id": "img7",
+          "description": "Minimum load list: must keep (life support, pressure monitoring, minimum comms, basic thermal) vs switchable (science instruments, arm, nonessential lighting)."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:14b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "When shedding load there has to be an order. Shut off what's farthest from the crew first, then non-life-support. Don't cut a big block at once or temperature and pressure can jump and make it harder to read. We used to do power-down drills on station the same way—step by step, wait for the system to settle before the next."
+        },
+        {
+          "type": "paragraph",
+          "content": "Put the order on the list too: step one shut which circuits, wait how many minutes, watch which parameters; step two shut which. Then those three don't have to work it out on the spot—just follow."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:14a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The line between \"switchable\" and \"must keep\" has to be zero-ambiguity for those three. No \"I think we can shut this\" or \"I think we can hold a bit longer\" discussions. If the list says switchable, it's switchable; must keep is must keep."
+        },
+        {
+          "type": "paragraph",
+          "content": "Clear boundaries actually reduce mental load. No value judgments in that moment—just identify: which column is this item in? Then execute. Save the brainpower for watching for anomalies and doing callbacks."
+        },
+        {
+          "type": "paragraph",
+          "content": "So when we design the list we have to stress-test it: any fuzzy items? Any \"depends\"? If so, remove or split into two lines—one \"condition A: off,\" one \"condition B: on.\""
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:15a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "At minimum load, life support takes up more than half of the remaining power. The rest goes to thermal and comms. So out of 12 kilowatt-hours there isn't much to \"save\"—every watt has to be accounted for."
+        },
+        {
+          "type": "paragraph",
+          "content": "Battery discharge isn't linear; voltage sags when you're near empty. So \"minimum load\" has to include margin—don't plan to hit zero at exactly six hours. If comms drag an extra hour, you can't have saved those last few watts and pushed people into a corner."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:15b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Heater layout has to be clear too. Which circuits are life-critical and which can be shut off temporarily—write it on the list. Shut off the wrong one and you get local condensation or frozen equipment; worse trouble later."
+        },
+        {
+          "type": "paragraph",
+          "content": "Different parts of the hull have different thermal mass. Hab module holds heat better; you can cut some heating and hold. Equipment bay or docking area can cool fast. Before shutting anything, know which heater circuit covers which zone."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:15c",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "When they shut off nonessential load, those three might feel a bit like \"we're retreating.\" The list can include a short psychological note: this is part of the plan, not failure. Saving power is to last until sunrise; after sunrise everything comes back. The commander can read that once before shedding load—it helps reduce unnecessary tension."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:16",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One more on thermal. Shadow on the surface can go to minus 170-plus. If one side of the hull faces deep space for a long time, heat loss is brutal—heater power has to be designed for worst case. At steady state, heating and cooling must balance or cabin temp will drift."
+        },
+        {
+          "type": "math",
+          "content": "P_{\\text{heat}} = \\varepsilon \\sigma A \\left(T^4 - T_{\\text{amb}}^4\\right) \\approx k \\cdot \\Delta T \\quad (\\text{first-order})"
+        },
+        {
+          "type": "paragraph",
+          "content": "So within six hours we need to confirm: are the heaters enough, will the battery hold? If not, keep shedding nonessential load until the two sides match."
+        },
+        {
+          "type": "image",
+          "media_id": "img19",
+          "description": "Hull thermal environment: one side in sun (orange/red), one side to space (blue/black), heat-flow arrows, temperature labels, heating vs cooling balance."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:17",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "On station we did thermal the same way—people first, then equipment. Stabilize temperature in the crew area first; remote segments can run a bit cooler for those hours."
+        },
+        {
+          "type": "paragraph",
+          "content": "Temperature sensor layout has to match the heater list. When you shut a heater circuit, know which temperature points will drop and how far before it's dangerous. Put that mapping in the list; check before shutting so everyone knows."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:17a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "\"Safe range\" for thermal has to be defined before the mission too. Not \"close enough\"—concrete numbers: cabin temp at point X not below Y, at point Z not above W. Outside range, follow the list—add heating, shed load, or escalate. Those three don't judge \"is this dangerous\" on the spot; they just check the table."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:18",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "\"Shut it off\" sounds cold, but for those three it might be a relief. The clearer the list—\"these stay on, these go off\"—the less they have to choose in that moment. One less choice is one less moment of panic."
+        },
+        {
+          "type": "paragraph",
+          "content": "Psychologically it's \"decision fatigue.\" In that environment every small decision drains you. Lock in everything you can beforehand; on site they only identify and execute. That's saving them power. Save the attention for real anomalies."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:18a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One more easy-to-miss point on power and thermal: solar angle changes. Over six hours the lander's attitude relative to the sun shifts; the sun-facing and shadowed sides can swap or fade. So \"minimum load\" can't be fixed for one snapshot—leave margin for illumination change. The list can say: reassess thermal balance every two hours, adjust heating or load if needed."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:19",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And who has authority to decide has to be written in stone. Say leak check finds the rate over limit, they try to fix it twice and it's still bad—try again or call the ground immediately? You can't negotiate that on the surface. Decide in advance: the commander has X minutes to call it, then escalate. Otherwise the three stare at each other and time runs out."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:20",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Handover timing can be tied to phases: one handover when leak check is done, another when power/thermal is done. That way everyone knows \"who's on next\"—no grabbing, no pushing."
+        },
+        {
+          "type": "paragraph",
+          "content": "The one in charge has the checklist for the current phase; backup sees the same one and can take over anytime. On handover, state clearly \"we're at this item, status thus\"; the next lead picks up from there."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:20a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Lead and backup have to be drilled. It's not \"lead does, backup watches\"—backup has to be able to take over anytime. So handover isn't \"what I did\"—it's \"current state, next item, any red items.\" The one taking over repeats back and becomes the new lead; responsibility transfers immediately. That way there's no gap."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:21",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "We can set timeouts and escalation per phase: if not done in time, auto \"request ground\" or \"execute backup procedure.\" If comms are down the commander decides in the cabin, but we log why. That way within six hours we never get stuck on \"what do we do next.\""
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:22",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Before \"we're back in touch with Earth\" they're on an information island. For those tens of minutes or hours it's just the three of them. So handovers and callbacks aren't just procedure—they're saying: we hear each other, we're doing this together."
+        },
+        {
+          "type": "paragraph",
+          "content": "A lot of accident reviews show the last minutes of conversation were chaos—no callbacks, no confirmation. In those six hours, every critical phrase gets a callback and a confirm; that's the antidote to that chaos."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:22a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Comms lead should be decided before launch—who handles the antenna, who sends heartbeat, who watches uplink. Sorting it out on the surface leads to friction. And that person should drill in the simulator until they can run the flow with their eyes closed; then on the first night they won't fumble."
+        },
+        {
+          "type": "paragraph",
+          "content": "Backup has to be able to operate too, they just don't take the lead. If the lead is tired or out of action, backup steps in. Comms windows don't wait."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:23",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Third is comms. Goal is simple: at least one successful uplink—heartbeat plus key telemetry. If we have relay, send in real time; if not, buffer locally and backfill on the next pass. Ground only needs to receive once to know the crew and cabin are okay."
+        },
+        {
+          "type": "mermaid",
+          "content": "graph TD\n    subgraph Cabin\n        A[Life support / pressure / battery]\n        B[Onboard computer]\n        C[Telemetry pack]\n    end\n    A --> B --> C\n    C --> D{Relay in view?}\n    D -->|Yes| E[Real-time uplink]\n    D -->|No| F[Local buffer]\n    F --> G[Backfill on pass]\n    E --> H[Ground station]\n    G --> H"
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:23a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Comms gear has to have enough power even at minimum load. Antenna, modem, encoder—don't skimp. Skimp and you're offline. So \"minimum comms\" on the list has to be a concrete equipment list, not vague \"keep some comms.\""
+        },
+        {
+          "type": "paragraph",
+          "content": "Antenna pointing, frequency, ground station ID—set those before landing and put them on the list. Don't tweak on the first night. Auto-acquire relay if you can; when you have it, send, then wait for the next pass."
+        },
+        {
+          "type": "paragraph",
+          "content": "At least one of the three has to be sharp on comms procedure: how to send heartbeat, how to check uplink status, how to tell \"we're linked.\" The others don't have to operate it but should know \"who's on comms and are we linked.\""
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:23b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "After linking to Earth, the ground may ask a lot of questions and want a lot of data. Those three need to be ready: stabilize the heartbeat first, then respond by priority. Don't dump everything the ground asks for at once or you'll clog the link again. The list can say: on first link send only heartbeat plus minimum telemetry; if the ground has a specific request, answer that separately. That way you address ground concern without overloading the link you just restored."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:24",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Comms windows have to be planned. When we're on the far side or in a relay blind spot, uplink is local buffer only. So \"first successful uplink\" might be an hour or two after landing—that's normal. As long as the cabin isn't leaking, power holds, and the three stay calm until then."
+        },
+        {
+          "type": "paragraph",
+          "content": "All three should know the ground-station and relay pass schedule. Knowing \"how long until we can link\" is better than not knowing and just waiting. Put the schedule on the first page of the checklist."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:24a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The time waiting for the pass can be designed as \"quiet monitoring\": no big actions, no lead change, the three just take turns glancing at the data. Save attention for \"when is the window\" and \"what to send.\" That saves mental load and power and reduces anxiety while waiting."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:25",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "\"We're back in touch with Earth\"—if the commander says it out loud, it carries weight for the three in the cabin. Not for the ground—for themselves: we're back in a world where we're heard."
+        },
+        {
+          "type": "image",
+          "media_id": "img9",
+          "description": "Cabin interior, three crew and \"back in touch with Earth\" moment: concept art, one on comms, two watching the screen, tension then slight relief, caption \"We're back in touch with Earth.\""
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:25a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "I imagine that moment: the first one says \"we're linked,\" and the other two probably exhale at once. That exhale isn't performed—it's the body. So \"linked to Earth\" isn't just a technical milestone; it's a psychological turning point. Past that point they know the ground is watching and listening; even with no new orders yet, that \"being seen\" feeling can steady them."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:26",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "From mission design, first successful uplink is a hard milestone. After that point the ground has data and later decisions can be based on live state. Before that, every decision is cabin-autonomous and procedure-based. So the comms phase goal is very clear: within six hours, at least one pass, one heartbeat plus telemetry."
+        },
+        {
+          "type": "paragraph",
+          "content": "Relay orbit and pass times are predictable. Before the mission we know: from minute X to minute Y after landing we have a window. The list can say \"relay expected T+90 to T+120\" so the three know: seal and power/thermal need to be stable by T+90, then wait for the window and send."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:26a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The definition of \"first successful uplink\" has to be clear too: does it count when \"ground station received and acknowledged\" or when \"we sent it\"? If the former, those three wait for the ack before checking off; if the latter, they can move to the next phase after sending. Different definitions, different expectations—lock it in beforehand."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:27",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "After first uplink success, don't rush to dump a lot. Stabilize the heartbeat rhythm first, then backfill data. Link just came up; if you overload it and it drops again, the letdown is worse."
+        },
+        {
+          "type": "paragraph",
+          "content": "The heartbeat packet can carry minimal telemetry—pressure, battery, temperature—so the ground gets key data with the heartbeat. Big logs and video can wait until the link is stable."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:28",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. The protocol can say: heartbeat first, bulk data queued. The ground will understand—confirm people first, then ask for detailed telemetry."
+        },
+        {
+          "type": "paragraph",
+          "content": "Local buffered data gets timestamps. When we backfill, the ground can reconstruct in order. Lock this in at the protocol level before landing; don't figure it out on the surface."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:29",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "I keep thinking about their state. Training, launch, transfer—that's all behind them. From the moment they land they're \"living on the Moon\" for the first time. No audience, no live feed—just three people and a can. So I want to stress two things. One is rotation: don't have all three staring at the same screen or they'll break together. Rotate—who's lead, who's backup, who rests. Two is the phrase at phase completion. When leak check is done, the commander says \"we have a sealed cabin.\" Simple, but it lets the three feel: we cleared this gate."
+        },
+        {
+          "type": "image",
+          "media_id": "img10",
+          "description": "Six-hour rotation schematic: time axis 0–6h in 3–4 segments, each with lead/backup/rest, phase-completion confirmation points."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:30",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "On handover the incoming lead gets a short brief: current state, next item, any anomalies. A few sentences, but they have to be clear. Avoid \"I thought you knew.\""
+        },
+        {
+          "type": "paragraph",
+          "content": "Do the handover against the list: go item by item, where we are, any red items. The incoming lead repeats \"I'm taking over at item X, current state nominal\" and then starts."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:30a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The handover brief should be short but structured: one line each for pressure, battery, cabin temp, comms status, plus \"next item\" and \"any anomalies.\" Over a minute is too long—those three don't have time for a lecture. You can time it in training and make it a habit."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:31",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And the handover itself is another \"done\" signal. I held this shift; the next one is yours—that clarity is valuable under pressure."
+        },
+        {
+          "type": "paragraph",
+          "content": "The one resting shouldn't go fully offline. They should know what phase we're in and if there are anomalies—if they have to step in they can. So \"rest\" means less screen time and fewer decisions, not tuning out."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:31a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Watch length shouldn't be too short. Give everyone at least half an hour as lead or backup before rotating. Rotate too often and they hand off just as they're getting into it—easier to miss items. But one person shouldn't carry three or four hours either; they'll fatigue. So two or three handovers in six hours is about right, each with a proper brief against the list."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:32",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "We can add a \"phase complete\" cue—system gives a short prompt, commander adds a verbal confirm. You get machine clarity and human rhythm. Rotation goes in the procedure too: at least one lead handover per major phase so no one carries the full six hours."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:32a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The phase-complete cue can have a bit of ritual: a short tone, a green flash on the screen. Then the lead says the confirm phrase. So \"complete\" isn't just a logic state—it's a felt moment. For the three, that moment matters—we cleared another gate."
+        },
+        {
+          "type": "paragraph",
+          "content": "After the confirm phrase, a few seconds of silence before the next phase. Don't rush. Those seconds let the brain absorb \"we did it.\" Then the list switches to the next phase and the lead reads the first item."
+        },
+        {
+          "type": "paragraph",
+          "content": "The rhythm for the whole stretch is: do item, check off, phase complete, confirm phrase, silence, next phase. Repeat a few times and six hours are done. No improv—just execute."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:32b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "When I write sci-fi I often think: what people lack in extreme environments isn't technology, it's \"a sense of order.\" Knowing what's next, knowing what happens when you're done, knowing someone can hear you—that matters more than one more battery. The checklists and confirm phrases we're designing tonight are really giving those three that order. Technology keeps the cabin sealed and the power on; order keeps the three from breaking."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:33",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "On callbacks, don't abbreviate. Repeat the full sentence, get confirmation, then execute. Save a few seconds and mishear—everything goes wrong. We learned that on station."
+        },
+        {
+          "type": "paragraph",
+          "content": "Critical actions—like \"shut heater circuit X\" or \"switch to backup\"—must be callback plus confirm. Routine readings don't need every sentence repeated, but anything on the safety boundary—don't skip a word."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:34",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Critical orders get a callback—whoever gave the order repeats it so it's not misheard. When there's disagreement, who has final say has to be clear. This is standard in aerospace, but in a \"first night\" situation it's what keeps people alive."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:34a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Callbacks sound mechanical, but in that environment mechanical is good. It turns \"I said it\" and \"you heard it\" into two verifiable things. The ground can hear the callback on the recording; post-flight analysis has a record. For those three, every critical sentence repeated back is a confirmation: we heard right, our next step is right."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:35",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Decision authority goes on the list: commander owns escalation decisions in leak-check phase; power/thermal phase the engineer can call it; comms phase back to the commander. Then responsibility is clear and no one waits for someone else."
+        },
+        {
+          "type": "paragraph",
+          "content": "Escalation means: this level can't decide anymore, hand to the level above or to the ground. So \"timeout,\" \"leak rate over limit,\" \"battery below X\" each map to a defined escalation action—no leaving it open."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:35a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Who decides, who does callbacks—sounds hierarchical, but in that environment it actually reduces friction. No need for the three to guess \"who do we listen to,\" no arguing over one sentence. The list fixes it; the one executing only identifies and repeats back, the one deciding only decides. Clear roles spread the pressure."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:36",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. And don't open the hatch in those six hours. Secure the can first; EVA comes later when we have full procedure, ground support, and redundancy."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:36a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Before EVA you still have airlock precool, suit check, power-up of external equipment—all of that has to happen with comms stable and the ground in the loop. The first night's goal is: cabin environment stable, link to the ground established, the three in a controlled state. EVA is a Day Two story, or later. Run \"spend one night on the Moon\" first, then talk about \"stepping out.\""
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:37",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The end of those six hours isn't \"open the hatch and step out\"—it's \"we can safely wait for the next sunrise.\" Sun up, power connected, then we talk EVA and building the camp. The first night is about holding the line."
+        },
+        {
+          "type": "paragraph",
+          "content": "A lot of stories focus on \"the first footstep.\" But what actually keeps people alive is every leak check, every watt, every callback in the hours before that step. Today we're only talking about that."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:38",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Wrap what we said into a six-hour framework they can execute. First ten-plus minutes: stabilize, confirm entry protocol. Then about an hour: leak check, section by section; if leak rate is good, confirm \"we have a sealed cabin.\" Next hour or so: power and thermal, minimum-load list in effect, confirm \"power and thermal in safe range.\" Then: establish comms; on first successful uplink confirm \"we're back in touch with Earth.\" Final stretch: rotation and monitoring, no hatch opening. Throughout: callbacks, single decision chain, escalate on timeout. Then they have a \"map,\" not a pile of scattered points."
+        },
+        {
+          "type": "image",
+          "media_id": "img12",
+          "description": "Six-hour overview timeline: 0–6h with segments stable → leak check → power and thermal → comms → rotation and monitoring, confirm phrases and estimated duration per segment."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:38a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "That \"map\" has another job: it tells those three where they are. Under stress people lose the sense of time—how long has it been, how long is left? The phases and estimated durations on the list help them rebuild that. After each phase, check the time and the list and they know: we're on plan, we're not behind. That certainty is worth a lot in that environment."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:39",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Each phase's \"confirm phrase\" should be one fixed sentence everyone memorizes. Then whoever says it, it's the same—no ad-libbing or leaving something out."
+        },
+        {
+          "type": "paragraph",
+          "content": "Leak check done: \"we have a sealed cabin.\" Power/thermal confirmed: \"power and thermal in safe range.\" Short, easy to remember, and when it's said the three and the ground all understand."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:39a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The confirm phrases are best drilled in the mission language. Not \"say something similar\"—everyone should be able to recite them word for word. Then when the ground hears that sentence on the recording, they know which node they've reached. We use the same sentences for post-flight analysis too, so there's no \"did he mean this\" ambiguity."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:40",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Last stretch—rotation and monitoring—means don't all sleep; one person stays awake watching data. The three can take short naps in rotation, but not all at once. Six hours isn't long; get through it then rest properly."
+        },
+        {
+          "type": "paragraph",
+          "content": "What to monitor: pressure, battery, cabin temp, comms status. Anomaly—escalate per list. No anomaly—maintain. No new decisions required—just \"watch.\""
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:39b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "If someone's clearly struggling during those six hours—suddenly very anxious or low—the other two should notice but not launch into a long pep talk. The list can say: if someone's clearly off, the lead can ask once, briefly, \"need to swap?\" If yes, swap; if no, continue. No pressure, no probing, but leave an exit. Often \"do you need a break\" works better than a lecture."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:40a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The rotation-and-monitoring phase has another implicit goal: conserve energy for day two. The three can't all be wiped out, or who will hook up power, restore load, and prep for EVA after sunrise? So the one \"resting\" really rests—even if they can't sleep, eyes closed helps. Lead and backup can take short naps in turn, but at least one person must stay awake and watching data. Put that balance on the list so they don't feel guilty resting."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:41",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Right. Those six hours are really the first page of Camp Zero. No flag planted, no big words—just \"sealed cabin, enough power, link up.\" But that's what turns the metal can into \"a shelter we can spend the first night in.\" Tomorrow we talk power. Tonight—may they follow this map to the end and then look up at Earth. We're still here; we hear each other."
+        },
+        {
+          "type": "image",
+          "media_id": "img13",
+          "description": "Camp Zero \"first page\" concept: lander on the surface, Earth in the deep sky, warm light inside the cabin, caption \"We're still here; we hear each other.\""
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:40b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The first-night checklist version has to be frozen before the mission. After landing, don't change the list—only execute. If they find an error in orbit or on the surface, discuss with the ground, uplink an update on the next pass, then execute the new version. Changing the list on the spot leads to chaos and disagreement about \"which version counts.\" So \"frozen version\" and \"who can update\" go in the mission rules."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:41a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "After the first night, when the sun comes up next morning and the solar panels connect, power is topped up. Then you gradually restore nonessential load, do more detailed equipment checks, prepare for first EVA. So the six hours aren't \"forever at minimum\"—just the bridge \"until sunrise.\" The steadier that bridge, the more margin you have later."
+        },
+        {
+          "type": "paragraph",
+          "content": "A lot of people ask: why not bring more batteries? Weight and cost. Every kilogram has to be launched from Earth. So the design is: first night on stored power, next day hook up the sun. Those six hours are betting that stored power is enough and the sun will rise on time. The checklist and procedures make that bet controllable."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:42",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One sentence for those three: seal stable, power and thermal stable, ground knows—do those three and the first night is passed. The rest is rotation, monitoring, and don't open the hatch."
+        },
+        {
+          "type": "paragraph",
+          "content": "Each of those has a list, a confirm phrase, timeouts and escalation. They don't need to improvise—they just follow the map. That's the \"map\" we can give them tonight."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:42a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "From mission planning, the first night's six hours are the first segment on the critical path. Get that segment right and the rest—power hookup, equipment recovery, EVA prep—has a base. So every page of checklist we're talking about tonight is paving the way for the next 29 days. Camp Zero isn't built in one night, but the first night decides whether you get a second."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:43",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Risks are still those: leak not fully checked, power or thermal can't hold, comms down too long, the three get confused on decisions. Counter: do leak check properly, nail down minimum load and margin, agree on heartbeat and timeouts, lock in who decides and who does callbacks."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:43b",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "It sounds like a lot of rules, but those rules are what make \"the first night\" from unimaginable to executable. Those three don't need to be heroes—they need to be executors. Execute well, and they're heroes."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:43a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Leak not fully checked—means cutting corners or misreading in leak check, thinking we're fine when we're leaking. Counter: follow the order, check off every item, stop if leak rate is over the line. Power or thermal can't hold—means we over-saved or miscalculated. Counter: leave margin in minimum load, write the heater list clearly, don't shut the life-critical circuits."
+        },
+        {
+          "type": "paragraph",
+          "content": "Comms down too long—means we can't reach the ground and the three are in the blind. Counter: buffer heartbeat and telemetry locally, send on the next pass; know \"how long until we can link\"; comms lead owns the phase, others don't take over."
+        },
+        {
+          "type": "paragraph",
+          "content": "The three get confused on decisions—means no one knows who to listen to, no callbacks, no one calls it on timeout. Counter: put decision authority on the list, lock who calls it per phase, mandatory callbacks, auto-escalate on timeout. Everything we talked about tonight is refining those counters."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:43c",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One last thing: during those six hours the ground is waiting too. If they don't get a heartbeat they'll assume the worst. So first successful uplink isn't just the three in the cabin exhaling—mission control exhales too. With a well-designed checklist, both sides follow the map and the \"we don't know\" time is minimized."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:44",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "It all sounds like \"must not\" and \"must\"—but those boundaries are what let the three know: inside this box we're safe. Outside the box—wait for sunrise."
+        },
+        {
+          "type": "paragraph",
+          "content": "After the first night there's the second, the third; we'll talk power, EVA, building the camp. But tonight only this one page: how to survive the first six hours."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:44a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Stress this again: the thermal gradient at Shackleton's rim is huge; the hull thermal design is for worst case. If in those six hours one side is cooling faster than expected, don't panic—check the list for what \"temperature anomaly\" means: add heating, shed a load, or escalate to the ground. It's all written in advance; follow it. The worst is ad-libbing on the spot; one guess and you're wrong."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:45",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Where patch kit, backup gas and power are, how to get them—all that has to be clear beforehand. When something goes wrong you can't go searching."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:45a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The first-night list can also have a page \"common anomalies and actions\": leak rate slightly over but not red—what to do; one circuit cooling fast—what to do; missed comms window—what to do. Each line maps to \"do this first, then this, when to escalate.\" Not a replacement for the main list but a quick-reference appendix. Under stress they forget details; flip to that page and follow the lines."
+        }
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:46",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One more: all three need to know where the emergency egress and backup options are. If we really have a leak and can't fix it, is there a procedure? If yes, that's one less thing to panic about; if no, they will. Put that on the first-night list too."
+        },
+        {
+          "type": "paragraph",
+          "content": "The procedure doesn't need to be elaborate. E.g. \"leak rate over limit, patch failed\" → escalate to ground, prepare to evacuate or wait for rescue. The exact actions can be detailed later, but \"when do we call it\" and \"what's next\" have to be fixed."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:46a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Emergency egress and backup options can be a dedicated section on the list with a clear heading. Normally you don't open that section, but all three need to know where it is and what it says. When you need it, there's no time to search from the top."
+        },
+        {
+          "type": "paragraph",
+          "content": "One more: every procedure should assume \"ground support may not be there.\" E.g. evacuate to where? If there's no second hab on the surface, the procedure might be \"maximize cabin survival time and wait for rescue.\" Those grim options have to be written down in advance, not debated in the moment."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:47",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "That's it for today. Day one—we talked about surviving the first six hours. It all sounds like an ops manual, but that's what turns \"spending the first night on the Moon\" from a fantasy into something you can do step by step. See you tomorrow. Camp Zero, Day 1."
+        }
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:48",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "One more thing: every checklist and procedure has to be run at least once in the simulator before landing. Not \"read\"—\"done with your own hands.\" Having done it and not having done it are completely different in the real cabin. It's old advice, but the first night is too critical not to say it again."
+        }
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:48a",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "When you run the checklist in the simulator, practice \"someone reports an anomaly\" too. E.g. lead says \"leak rate's in the yellow,\" backup how to respond, how to callback, how to look up the right action on the list. Having drilled that versus not makes a big difference when it's real. For the first night we want them to follow the map—but the map should include \"what if we're off the map\": that's escalate, callback, follow the procedure, no improv."
+        }
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:49",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Okay. Then we wait for their good news. May those six hours be uneventful, may they follow the map to the end, and when the sun rises tomorrow may the first page of Camp Zero be firmly turned. Tomorrow we talk about light—once the solar arrays go out, they'll find out whether this world's first gift to us is enough. Good night."
+        }
+      ]
+    }
+  ]
+}

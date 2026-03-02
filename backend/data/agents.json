@@ -1,0 +1,6 @@
+[
+  {"id": "elena", "name": "艾琳娜·星轨", "title": "科幻作家", "code_name": "星云记录者", "animal": "太空狐狸", "color": "#c084fc"},
+  {"id": "chenwei", "name": "陈伟", "title": "物理科学家", "code_name": "守恒者", "animal": "北极熊", "color": "#38bdf8"},
+  {"id": "alice", "name": "肯宁·佐藤", "title": "计算机科学家", "code_name": "比特先知", "animal": "赛博猫", "color": "#f97316"},
+  {"id": "oldtom", "name": "老熊·科瓦尔斯基", "title": "机械师", "code_name": "月壤老兵", "animal": "机甲海狸", "color": "#a78bfa"}
+]

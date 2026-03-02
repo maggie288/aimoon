@@ -1,0 +1,643 @@
+{
+  "date": "2026-03-06",
+  "day": 2,
+  "topic_title": "Source of Power",
+  "topic_description": "Solar arrays deploy, but efficiency falls far short of expectations.",
+  "phase": "Against the Odds",
+  "messages": [
+    {
+      "role_id": "alice",
+      "timestamp": "08:00",
+      "content_blocks": [
+        {"type": "paragraph", "content": "They made it through those six hours yesterday—cabin sealed, heartbeat sent. This morning, first thing on the surface, was to deploy the solar arrays. Design peak is 85 kilowatts; at the rim of Shackleton, near the Peak of Eternal Light, we had every reason to expect enough sun. But the numbers that came back this morning are wrong. Chen Wei, you first: what do the numbers say?"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:00a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We're calling today's episode \"Source of Power.\" The source—the sun—is right overhead. But when they actually unfolded the panels and hooked up the lines, they found that \"having it\" and \"having enough\" are two different things. Hope and disappointment start with the first power curve."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:01",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The theoretical power equation is P = η × I × A × cos θ. We use η, conversion efficiency, at 32% for multijunction GaAs; I, solar irradiance at Earth–Moon distance, about 1361 W/m²; A, array area 200 m²; cos θ, incidence angle—at the edge of the Peak of Eternal Light we assumed an average around 0.9. That gives a peak on the order of 80 kW and a daily energy around 45 kWh. This morning's actual output is only 67% of design."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:02",
+      "content_blocks": [
+        {"type": "math", "content": "P = \\eta \\cdot I \\cdot A \\cdot \\cos\\theta \\approx 0.32 \\times 1361 \\times 200 \\times 0.9 \\approx 78\\,\\text{kW}_{\\text{peak}}"},
+        {"type": "paragraph", "content": "Breaking it down: dust on the panels has already cost us about 12% in transmittance; temperature—efficiency drops when the panels get hot—another 8%; and installation angle plus local shadowing, another 13%. Add those up and you get 67%. The hardware isn't broken; the environment is harsher than we assumed."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:03",
+      "content_blocks": [
+        {"type": "image", "media_id": "img14", "description": "Shackleton rim solar array layout and illumination: top-down view of site, Peak of Eternal Light high-irradiance zone, array position, sun elevation and cos θ over a 24 h lunar day."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:04",
+      "content_blocks": [
+        {"type": "paragraph", "content": "So yesterday they thought \"once we plug into the sun we're set.\" This morning they plug in and find the sun gives, but not enough. That gap—it's like waiting all night for a rescue ship, and when it comes there's only room for one."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:05",
+      "content_blocks": [
+        {"type": "paragraph", "content": "I've seen what contamination does to solar panels on the station. Lunar dust is finer and more electrostatic; once it's on, it's hard to get off. Blowing it off takes gas—either from life support or a separate supply—both cost something. Did we build in a regular cleaning window?"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:06",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Yes. The maintenance list has a nitrogen blowdown every 72 hours. But where does the nitrogen come from? Oxygen is from electrolysis; if we brought nitrogen from Earth, the stock won't last. So either we make nitrogen in situ or we accept that the panels will keep getting dirtier and model the long-term power drop."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:06a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "In life support, nitrogen is mainly for diluting oxygen and avoiding a pure-oxygen environment. Separating it from the loop is technically feasible, but we need interfaces and procedures. Short term, the most realistic path is: figure out how many bottles we brought, how many blowdowns each gives, how many days that buys us—then decide whether 72-hour cleaning is sustainable."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:06b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "During blowdown, crew stay clear of the outlet and preferably wear simple protection. Lunar dust kicked up and inhaled is no joke. The checklist should say: who operates, who monitors, and how to run cabin ventilation during cleaning."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:06c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "\"The panels will keep getting dirtier\"—that sounds passive. But if the three of them hear \"we have a cleaning plan, we have data, we're responding on schedule,\" it's not resignation; it's control. Wording matters."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:07",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The power architecture is: main solar array → distribution and regulation → battery pack plus critical loads; two RTG strings tie in separately, normally topping up, and can carry minimum load if the main array fails."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:08",
+      "content_blocks": [
+        {"type": "mermaid", "content": "graph LR\n    subgraph Main\n        A[Solar array 85kWpeak]\n    end\n    subgraph Storage\n        B[Battery 400kWh]\n    end\n    subgraph Backup\n        C[RTG x2 2kW each]\n    end\n    A --> D[Distribution]\n    C --> D\n    D --> B\n    D --> E[Life support]\n    D --> F[Comms/Thermal/Other]\n    style A fill:#eab30833\n    style C fill:#64748b33"}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:09",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can project the long-term curve. Assume another 2% loss in transmittance per month with no intervention; in six months we'd be down to a bit over 50% effective power. By then life support, heating, and comms would all be fighting for watts. So we either fix the dust or rely more on backup power."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:10",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Backup meaning RTG?"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:10a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Yes. RTG is the last line of insurance, not the daily workhorse. The workhorse is still solar. So today's focus isn't \"what if it fails\"—it's \"how we live on the 67% line.\""}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:10b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The three of them might instinctively think: can we get more power? Can we run RTG harder? We need to be clear up front: RTG is fixed output, there's no \"more.\" Anchor expectations on solar and 67%, and they'll actually adapt."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:11",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Right. Radioisotope thermoelectric generator—no sun, steady output. Low power but reliable. We have two Kilopower-class units, about 2 kW each. When solar is healthy they supplement; when solar fails they can carry minimum life-support load, not full base HVAC and science."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:12",
+      "content_blocks": [
+        {"type": "image", "media_id": "img15", "description": "RTG schematic: isotope heat source, thermocouples, radiator fins, DC output; 2 kW continuous, sun-independent."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:13",
+      "content_blocks": [
+        {"type": "paragraph", "content": "So the reality is: solar is worse than we hoped, and RTG is only a last-resort card. For the next few days we either save power or find ways to get more from the panels. Saving power means shedding nonessential load—and someone has to decide what's nonessential."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:13a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "\"Nonessential\" means different things to different people. Some would never shut science payloads; others say survival first. So we can't argue about it on the surface—we lock it in beforehand: what's on the list is nonessential, no \"depending on the situation.\""}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:13b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Physically we can rank by power: life support, pressure, thermal, comms are the floor; above that, lighting, science, arm, entertainment. Pre-mission we compute watts per tier and put it in the list. On the surface we shed by tier, not by \"I think.\""}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:14",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can hardwire priority in the system: life support > comms > pressure and thermal > everything else. When we hit a threshold we automatically shed noncritical load and alert. But \"automatic\" can feel scary—we should spell out in advance what each alert means, what they lose, and how long until we can restore it."},
+        {"type": "code", "content": "// Load-shed priority: shed by L1/L2 when power is short\nfunction shedLoad(P_now, P_L2, P_L1) {\n  if (P_now >= P_L2) return 'all_loads';\n  if (P_now >= P_L1) return 'shed_noncritical';  // science, lighting, etc.\n  return 'life_support_only';  // life support + comms only, alert RTG standby\n}"}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:15",
+      "content_blocks": [
+        {"type": "mermaid", "content": "graph TD\n    P[Current power] --> C{Enough?}\n    C -->|Yes| N[All loads]\n    C -->|No| T{Below L2?}\n    T -->|Yes| S[Shed noncritical]\n    T -->|No| R{Below L1?}\n    R -->|Yes| M[Life support + comms only]\n    R -->|No| E[Alert + RTG takeover]\n    S --> N\n    style E fill:#b91c1c33"}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:16",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Losing \"nonessential\" things might mean losing extra light, losing video with family, losing whatever still feels like home. After hope is already dented, being told \"we're turning this off to survive\"—they need to be prepared for that."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:16a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "What we shut and when—best to drill that before the mission. Run through \"power drops to L2, shed first tier\" in the simulator; then on the surface it won't feel like the first time something's taken away—it'll feel like \"we've done this before.\""}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:16b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The brief will spell it out: if we hit L2 today, these items go off first, this many watts each, and here's what changes in the cabin—e.g. this zone dims, this screen goes off. Knowing in advance is easier than a patch of darkness appearing out of nowhere."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:17",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We have Shackleton illumination data, but \"eternal light\" isn't 100% irradiance. There are still short shadows and low sun angles; cos θ changes. I recommend a continuous 24-hour sample next: build the real I and θ curves, then back out the daily energy we can count on. That gives us a basis for power budgets."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:18",
+      "content_blocks": [
+        {"type": "math", "content": "E_{\\text{day}} = \\int_0^{24\\,\\text{h}} P(t)\\,dt \\approx \\eta\\cdot A \\int I(t)\\cos\\theta(t)\\,dt"},
+        {"type": "paragraph", "content": "After 24 hours we integrate and get \"real daily energy.\" Compare that to minimum life-support demand and we know how much margin we have and whether we can afford nonessential load."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:19",
+      "content_blocks": [
+        {"type": "paragraph", "content": "I'd keep the cleaning option. Nitrogen can come from separation later or a small nitrogen module. First we need to know: how much do we gain per cleaning and for how long, then we set the cleaning schedule. We can't put it off forever."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:19a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "How much we gain per cleaning depends on the baseline after the 24-hour data. If half of the 12% we lost is dust, we might get back on the order of 6 percentage points. But we need real data, not guesswork."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:19b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Cleaning will be a \"we did something to improve the situation\" move for them. Better than watching power slide. So we keep the option not just for engineering—for psychology too."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:19c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "If we set cleaning at 72 hours, it ties to the surface work rhythm. We could design it as: every three \"work days\" we do one power maintenance—cleaning plus mechanism check. Easy to remember, hard to forget."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:20",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Don't ignore the hinges and drives after deployment—dust gets into the joints. If we need to reorient later and the mechanism is stuck, we're in trouble. Add a solar array mechanism check to the maintenance list, together with cleaning."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:21",
+      "content_blocks": [
+        {"type": "image", "media_id": "img16", "description": "Solar panel hinge and drive mechanism: deployment arm, hinge seal points, dust intrusion risks, suggested inspection and blowdown order."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:22",
+      "content_blocks": [
+        {"type": "paragraph", "content": "On the monitoring panel we can show \"current power / design power\" and \"7-day average forecast.\" So they know: today isn't the worst, and it isn't the last day. Transparency cuts panic."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:22a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "24-hour sampling protocol: power and irradiance meters log once per minute, stored locally. Next morning we integrate and get yesterday's total energy. Also log panel temp and ambient—helps later to separate η(T) and dust contribution."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:22b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "During the sample, no one touches panel angle or runs blowdown—otherwise the day's data is contaminated. Let it run one full lunar day; we get the \"real curve for current conditions.\""}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:22c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "So today the three of them, besides watching the curve, confirm sampling is running, storage isn't full, and no one accidentally stopped the log. Checklist: 24h power sample started; check status every 4 hours, no need to babysit."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:22d",
+      "content_blocks": [
+        {"type": "paragraph", "content": "\"We're collecting data\" is itself a psychological anchor. They're not just waiting—they're doing something that will have an outcome. Tomorrow morning there will be a number that drives the next save-power and cleaning decisions. So today they can tell themselves: we're getting ready for tomorrow."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:22e",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Right. And once we have the 24-hour data, the ground sees it too. If both sides agree on the numbers, we avoid \"crew says we're fine, ground says we're not.\" Same basis for decisions, same power budget."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:22f",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can spell out the nonessential list in detail: science payloads, arm standby, non-essential lighting, entertainment screens, backup heating loops—each with approximate power. Then they know \"if we shut these, we save this much\"—no guesswork."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:22g",
+      "content_blocks": [
+        {"type": "paragraph", "content": "When shedding, follow the list order—don't skip around. That way we can reconstruct later: what went off first, what next, whether power stabilized. If something goes wrong, we can trace back."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:23",
+      "content_blocks": [
+        {"type": "paragraph", "content": "I imagine them staring at the power curve, numbers below what they expected. Nobody speaks. That silence isn't surrender—it's \"we have to recalculate what kind of life we can live.\" After hope and disappointment, the next step has to be \"what can we do\"—not stay stuck."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:24",
+      "content_blocks": [
+        {"type": "paragraph", "content": "What we can do: one, start a 24-hour illumination and power sample now; two, list nonessential loads and set L1/L2 shed thresholds; three, nail down cleaning cycle and nitrogen source. All three in parallel, and we can lock a first-cut plan today."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:25",
+      "content_blocks": [
+        {"type": "paragraph", "content": "I'll make \"power status\" the first line of the daily brief. First thing they see when they wake: how much we generated yesterday, how much we used, what's in the buffer, and at current trend how many days we have. No sugarcoating, no delay."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:26",
+      "content_blocks": [
+        {"type": "paragraph", "content": "They need a phrase they can say out loud, like \"we have a sealed cabin\" yesterday. Today it could be \"we know where the power comes from and whether it's enough\"—not optimism, just clarity."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:26a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can put that line at the top of the daily brief. First thing they see when they open it: power baseline updated to 67% of design, 24-hour sample in progress, we know where the power comes from and whether it's enough. Repeat it until it becomes habit."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:26b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "They can recite it at handover too. When the lead changes: add one line—current power status nominal, operating to 67% baseline. The next shift takes that and works from the same baseline—no drift."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:26c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Reciting isn't just for the ground—it's for each other. When all three say the same thing, they're confirming: we're using the same reality. No one is still hoping \"maybe tomorrow we're back at 100%.\""}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:27",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can quantify the temperature effect. Multijunction cells are best around 25°C; on the surface the panels can hit 80°C or more and efficiency drops. In the formula, η is really η(T); we've got an empirical curve and it matches the ~8% loss."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:28",
+      "content_blocks": [
+        {"type": "math", "content": "\\eta(T) \\approx \\eta_0 \\left(1 - \\alpha (T - T_0)\\right), \\quad \\alpha \\approx 0.004\\,\\text{/°C}"},
+        {"type": "paragraph", "content": "Long term we either cool the panels or accept the loss. Cooling costs power or radiator mass—it has to go into the energy budget."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:29",
+      "content_blocks": [
+        {"type": "paragraph", "content": "On the station we used radiators. On the Moon there's no convection, only radiation. If the back of the array has radiating area we can dump some heat passively, but the design may not have left much margin. Short term, accept 67%, get the 24-hour data and cleaning plan in place."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:30",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We'll make power and energy data one-click export so the ground sees the same curves. Decisions are shared, not carried by the three of them alone."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:31",
+      "content_blocks": [
+        {"type": "paragraph", "content": "\"The ground sees it too\"—that matters to the crew. They're not alone; the data is shared, and so is the responsibility."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:31a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "After the ground sees 67%, they may ask: can we add a panel or change angle? We should have the answer ready: adding panels means EVA and resources—not short term; angle change we can evaluate after the 24-hour data. So the crew aren't caught off guard by \"can't you think of something?\""}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:31b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The ground sometimes throws out a lot of ideas. The crew need a rule: today we only do the three things we agreed—sampling, list, cleaning assessment. Other suggestions get written down for tomorrow. We can't have 67% today and a new plan tomorrow—that's chaos."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:31c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Comms bandwidth is limited; big data has to queue. So \"one-click export\" for the power curve should be compressed before uplink—don't clog the link we just restored. The ground needs the summary and key curve; raw minute-level data can follow later."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:31d",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Between them and the ground, the one thing to align on today is: we all accept 67% as the new baseline. Ground stops planning for 100%; crew stop hoping for 100%. Once both sides own that number, the rest of the decisions line up."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:32",
+      "content_blocks": [
+        {"type": "paragraph", "content": "One more point: 67% isn't a disaster, it's the corrected baseline. From today on, all planning uses 67% effective power, with margin on top if needed. Stop using 100% design in the plan or we'll keep being disappointed."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:33",
+      "content_blocks": [
+        {"type": "paragraph", "content": "In the system we'll show \"design power\" and \"current effective power\" in two columns, with history. So 67% isn't a one-time bad headline—it's the new baseline."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:34",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Nitrogen blowdown procedure and interfaces go in the checklist, tied to the solar mechanism inspection. Who does it, how long, what risks—e.g. dust kicked up and inhaled—all spelled out."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:35",
+      "content_blocks": [
+        {"type": "paragraph", "content": "If they have to shed load today, I hope someone says first: we're following the plan, we're shedding to last until tomorrow, until cleaning, until the data is in. It's not surrender; it's a tactical pullback."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:35a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Who says it? I'd say the commander. Shedding load is a decision; the person who decides should say it, so the other two execute with a clear head. And saying it once isn't enough—repeat it at the moment we actually shed: shutting [X] load now, per procedure, to last until the data is in."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:35b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can have the system pop up that exact line when shed is triggered. The operator reads it, or the commander does, and the other confirms. That way we don't forget and we don't ad-lib."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:35c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Did we ever drill \"shed load\" in the simulator? If not, we should add one. The first time they shed on the surface, hands and words need to be steady—trained vs untrained makes a big difference."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:35d",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The moment something goes off, the cabin may get quieter—one less hum, one less light. That silence can mess with your head. So that line also fills those few seconds: we're following the plan, we're not out of control."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:36",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Agreed. We can add a line in the procedure: power-saving is an expected option, not only for emergencies. That helps them execute with a steadier mindset."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:37",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We'll set L1 and L2 together with physics and mission, and put them in the flight rules. On the surface we don't change the rules on the fly—we execute."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:38",
+      "content_blocks": [
+        {"type": "image", "media_id": "img17", "description": "Design vs actual power curve (24 h concept): time on horizontal axis, power on vertical; design 78 kW peak, 45 kWh/day; actual ~67%, with dust/temperature/angle loss annotated."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:39",
+      "content_blocks": [
+        {"type": "paragraph", "content": "They'll look at this curve a lot. The first time is disappointment; after that, each time can be \"we're still running to the new baseline\"—reassurance."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:39a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We can add a line under the curve: three loss terms—dust 12%, temperature 8%, angle and shadow 13%. When they see where the numbers come from, they stop wondering if the hardware failed. Understanding the source cuts anxiety."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:39b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "If we do cleaning in the next few days, we can overlay a \"post-cleaning\" curve on the same plot. Then they see directly: how much one cleaning gave back. Feedback keeps them on the cleaning schedule."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:39c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Panel temperature has to be in the log too. Panels get hot and efficiency drops; if we add cooling or adjust angle later, panel temp goes down and efficiency up—the curve will show it. So 24-hour sampling must include panel temp."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:39d",
+      "content_blocks": [
+        {"type": "paragraph", "content": "The first time the ground sees this plot, they might go quiet for a few seconds. We can brief them in advance: the first look will be a shock, but this is the corrected baseline, not an accident. So the ground doesn't overreact either."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:40",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We also need to watch battery health. Deep discharge and charge cycles shorten life. Saving power is fine, but don't push the battery to the limit every time—a bit of margin helps long term."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:41",
+      "content_blocks": [
+        {"type": "paragraph", "content": "We'll include battery SOC and charge/discharge rate in the daily brief; we'll alert if we go out of bounds. The long-term life model is running too; we'll flag trends early."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:42",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Three lines for the crew: one, current effective power is 67% of design—plan from today on that basis; two, 24-hour sampling and L1/L2 shed procedure start today; three, cleaning and mechanism check go on the maintenance list, and we lock the nitrogen source as soon as we can."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:42a",
+      "content_blocks": [
+        {"type": "paragraph", "content": "L1 and L2 numbers should be set from the 24-hour data once we have it. Today we can give temporaries—e.g. below 50 kW enter L2, below 35 enter L1. After tomorrow's integration we fine-tune and put them in the flight rules."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:42b",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Nitrogen source options: one, what we brought—limited; two, separate from the life-support loop—needs plumbing and validation; three, bring a small nitrogen unit later. Short term we figure how many cleanings the reserve buys, then decide whether to ration or push for separation."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:42c",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Tomorrow they also face oxygen and CO₂. Power and breathing are the same ledger—electrolysis, loop, scrubbing all need power. So stabilizing the power baseline today means tomorrow when we talk \"between breaths\" they're not hit by two variables at once."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:42d",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Right. Tomorrow we can start from \"power cost of oxygen\" and \"can we run the full loop on 67%.\" Today we close the power chapter and let them sleep; tomorrow we turn the page."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:42e",
+      "content_blocks": [
+        {"type": "paragraph", "content": "If the three in the cabin ask the ground today \"what do we do next?\" the ground should answer: plan to 67%, run the 24-hour data, we'll look at the result together and then decide. Don't pile on new instructions—that's how things get messy."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:42f",
+      "content_blocks": [
+        {"type": "paragraph", "content": "On the maintenance list we can mark \"solar array mechanism check\" and \"cleaning\" as \"execute after 24h data.\" Then they know: we're not skipping it, we're waiting for data to schedule. Expectation set, no feeling of being strung along."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:42g",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Tonight when they lie down, they may replay today's numbers. I hope they land on \"we know\"—not \"we're done.\" We've said that a lot because it really matters."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:43",
+      "content_blocks": [
+        {"type": "paragraph", "content": "If we ever write today down, it'll be \"Source of Power.\" The source is there, but not as generous as we thought. They have to learn to live in light that isn't quite enough—until the next episode, when we talk about breathing."}
+      ]
+    },
+    {
+      "role_id": "alice",
+      "timestamp": "08:44",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Tomorrow we talk oxygen loop and CO₂—same ledger as power. If we're short on power, electrolysis and recycling suffer. So stabilizing the power baseline today gives us room to breathe tomorrow."}
+      ]
+    },
+    {
+      "role_id": "oldtom",
+      "timestamp": "08:45",
+      "content_blocks": [
+        {"type": "paragraph", "content": "Right. That's it for today. Power brief, 24-hour sample, L1/L2 and cleaning checklist—we've set what we can. The rest is up to them and the ground."}
+      ]
+    },
+    {
+      "role_id": "elena",
+      "timestamp": "08:46",
+      "content_blocks": [
+        {"type": "paragraph", "content": "When they look at the new power curve tonight before sleep, I hope they think \"we know\"—not \"we're done.\" Camp Zero, Day 2. See you tomorrow."}
+      ]
+    },
+    {
+      "role_id": "chenwei",
+      "timestamp": "08:47",
+      "content_blocks": [
+        {"type": "image", "media_id": "img18", "description": "Solar array deployment and first-day power curve: surface deployment, connection to distribution, power rise to 67% of design, curve vs design line with dust/temperature/angle loss factors."}
+      ]
+    }
+  ]
+}

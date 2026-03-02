@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #0a0a0b;
+  --surface: #111113;
+  --border: #1f1f23;
+  --accent: #06b6d4;
+  --podcast: #eab308;
+  --podcast-muted: #a16207;
+}
+
+body {
+  background: var(--void);
+  color: #e4e4e7;
+}
+
+/* Mermaid in dark theme */
+.mermaid {
+  background: #0f0f11 !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.mermaid svg {
+  max-width: 100%;
+}
+
+/* KaTeX in dark */
+.katex {
+  color: #e4e4e7;
+  font-size: 1.1em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d2d32;
+}

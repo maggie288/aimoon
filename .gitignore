@@ -1,0 +1,19 @@
+# 环境变量（含密钥，勿提交）
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+out/
+
+# 本地媒体/缓存
+backend/media/
+*.log

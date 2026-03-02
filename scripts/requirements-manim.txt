@@ -1,0 +1,2 @@
+# For rendering episode videos only. Install in dev: pip install -r scripts/requirements-manim.txt
+manim>=0.18.0

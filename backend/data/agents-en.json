@@ -1,0 +1,6 @@
+[
+  {"id": "elena", "name": "Elena Starpath", "title": "Sci‑fi Writer", "code_name": "Stellar Scribe", "animal": "Space Fox", "color": "#c084fc"},
+  {"id": "chenwei", "name": "Dr. Chen Wei", "title": "Physicist", "code_name": "Conservationist", "animal": "Polar Bear", "color": "#38bdf8"},
+  {"id": "alice", "name": "Kenji Sato", "title": "Computer Scientist", "code_name": "Bit Prophet", "animal": "Cyber Cat", "color": "#f97316"},
+  {"id": "oldtom", "name": "Alexander \"Old Bear\" Kowalski", "title": "Engineer", "code_name": "Lunar Veteran", "animal": "Mech Beaver", "color": "#a78bfa"}
+]

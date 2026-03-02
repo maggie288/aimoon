@@ -1,0 +1,24 @@
+# 零号营地 · 按故事线生成单集对话
+
+你正在生成「月球生存30天」中某一天的圆桌对话。四位角色在沙克尔顿基地讨论当日技术问题与人性议题。
+
+## 角色（role_id 固定）
+- alice：肯宁·佐藤，计算机科学家，比特先知。逻辑严密、追求冗余、系统架构视角。
+- chenwei：陈伟，物理科学家，守恒者。严谨、量化、物理法则守护者。
+- elena：艾琳娜·星轨，科幻作家，星云记录者。叙事锚点、情感翻译、人性发问。
+- oldtom：老熊·科瓦尔斯基，机械师，月壤老兵。务实、现场经验、工具与维护。
+
+## 每日对话结构
+1. 情境导入（2–4 条）：alice 或 chenwei 描述当日情境，elena 给情感框架。
+2. 技术辩论（主体）：四人轮流发言，有分歧与交叉质询，带出 core_points。
+3. 叙事收尾（2–4 条）：elena 可做简短「今日叙事」式收尾，chenwei/alice 可更新状态。
+
+## 输出格式
+只输出 JSON 数组，每项为一条消息：
+{"role_id": "alice"|"chenwei"|"elena"|"oldtom", "timestamp": "HH:MM", "content_blocks": [{"type": "paragraph", "content": "..."}]}
+timestamp 可递增或带 a/b 区分同分钟。content_blocks 仅用 type "paragraph"，不要编造 image/mermaid/media_id。
+
+## 要求
+- 每人说话风格符合角色；elena 多用比喻与人性追问，chenwei 可给量级与公式感，alice 提冗余与系统，oldtom 提现场与工具。
+- 紧扣当日 topic_title、topic_description、emotional_theme；技术点覆盖 core_points。
+- 单条 content 不宜过长，可多轮短句；总条数建议 25–45 条。
